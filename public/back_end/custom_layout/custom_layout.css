@@ -1,0 +1,26 @@
+.content_body{
+    height: auto;
+    width: 100%;
+    background-color: #ecf0f4;
+}
+label{
+    font-weight: 600px;
+    font-size: 16px;
+}
+.title_option{
+    font-weight: 600px;
+    color: rgb(0, 0, 0);
+}
+.dis-none{
+    display: none;
+}
+.dis-block{
+    display: block;
+}
+/* top header */
+.mail_top_header{
+    cursor: pointer;
+}
+.phone_top_header{
+    cursor: pointer;
+}
