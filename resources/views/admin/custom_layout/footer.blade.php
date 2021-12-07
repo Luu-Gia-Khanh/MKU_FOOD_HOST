@@ -11,7 +11,9 @@
                                 <li>
                                     <p class="info-item">
                                         <i class="biolife-icon icon-location cus_footer_text"></i>
-                                        <b class="desc cus_footer_text">Quốc Lộ 1A, Huyện Long Hồ, Phú Quới, Long Hồ, Vĩnh Long</b>
+                                        <b class="desc cus_footer_text">
+                                            Quốc Lộ 1A, Huyện Long Hồ, Phú Quới, Long Hồ, Vĩnh Long
+                                        </b>
                                     </p>
                                 </li>
                                 <li>

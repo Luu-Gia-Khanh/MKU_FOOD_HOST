@@ -17,7 +17,7 @@
         <div class="row">
             <div id="main-content" class="main-content col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="block-item head__title">
-                    <div class="head__title--text" style="width: 350px">
+                    <div class="head__title--text cus_main_color border_bottom_4" style="width: 350px">
                         TẤT CẢ SẢN PHẨM KHUYẾN MÃI
                     </div>
                 </div>
@@ -25,7 +25,7 @@
         </div>
         <div class="row">
             <!-- Main content -->
-            <div id="main-content" class="main-content col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div id="main-content" class="main-content col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 50px">
                 <div class="block-item recently-products-cat md-margin-bottom-39 custom-container-product">
                     <ul class="products-list content_list_product_search" style="list-style-type: none;">
                         @foreach ($all_product_discount as $product)
@@ -76,7 +76,7 @@
                                                 <a class="btn wishlist-btn btn_add_wish_lish" style="cursor: pointer;"
                                                     data-id="{{ $product->product_id }}">
                                                     @if ($check_already_wish->check_already == 1)
-                                                        <i class="fa fa-heart" aria-hidden="true" style="color: #7faf51"></i>
+                                                        <i class="fa fa-heart" aria-hidden="true" ></i>
                                                     @else
                                                         <i class="fa fa-heart icon_wish_list_{{ $product->product_id }}" aria-hidden="true"></i>
                                                     @endif
@@ -84,23 +84,23 @@
                                             @else
                                                 <a href="{{ URL::to('login_client') }}"class="btn wishlist-btn" >
                                                     @if ($check_already_wish->check_already == 1)
-                                                        <i class="fa fa-heart" aria-hidden="true" style="color: #7faf51"></i>
+                                                        <i class="fa fa-heart cus_main_color" aria-hidden="true" ></i>
                                                     @else
-                                                        <i class="fa fa-heart" aria-hidden="true"></i>
+                                                        <i class="fa fa-heart cus_main_color" aria-hidden="true"></i>
                                                     @endif
                                                 </a>
                                             @endif
                                             {{-- end wish list --}}
                                                 @if (Session::get('customer_id'))
                                                     <button href="#"
-                                                        class="btn add-to-cart-btn btn-block btn-sm add_cart_one"
+                                                        class="btn add-to-cart-btn btn-block btn-sm add_cart_one cus_main_bg cus_main_text"
                                                         data-id="{{ $product->product_id }}"><i
                                                             class="fa fa-cart-arrow-down" aria-hidden="true"></i>
                                                             thêm vào giỏ hàng
                                                         </button>
                                                 @else
                                                     <a href="{{ URL::to('login_client') }}"
-                                                        class="btn add-to-cart-btn btn-block btn-sm"><i
+                                                        class="btn add-to-cart-btn btn-block btn-sm cus_main_bg cus_main_text"><i
                                                             class="fa fa-cart-arrow-down" aria-hidden="true"></i>
                                                             thêm vào giỏ hàng
                                                         </a>

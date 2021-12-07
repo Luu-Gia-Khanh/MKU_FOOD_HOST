@@ -30,7 +30,6 @@
         <div id="main-content" class="main-content">
             <div class="container">
                 <div class="row">
-
                     <!--sidebar-->
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                         <nav class="user">
@@ -49,10 +48,10 @@
                             </div>
                             <div class="laptop">
                                 <ul class="user-list-module">
-                                    <li class="user-module-item user-module-item--active">
+                                    <li class="user-module-item ">
                                         <a href="{{ URL::to('user/account') }}" class="user-module-item--link">Hồ sơ</a>
                                     </li>
-                                    <li class="user-module-item">
+                                    <li class="user-module-item user-module-item--active">
                                         <a href="{{ URL::to('user/address') }}" class="user-module-item--link">Địa chỉ</a>
                                     </li>
                                     <li class="user-module-item">
@@ -87,7 +86,10 @@
                         <div class="content__user-address">
                             <div class="content__user-address-heading">
                                 <span class="user-heading-address-title">Địa chỉ của tôi</span>
-                                <button class="btn-add-address lookup" id="btn-open-model-add_address" data-toggle="modal_add_address" data-target="#add_address_account"><span class="icon-copy ti-plus"></span> Thêm địa chỉ</button>
+                                <button class="btn-add-address lookup cus_main_bg cus_main_text" id="btn-open-model-add_address"
+                                    data-toggle="modal_add_address" data-target="#add_address_account">
+                                    <span class="icon-copy ti-plus"></span> Thêm địa chỉ
+                                </button>
                             </div>
 
                             @if (count($all_address) > 0)
@@ -95,8 +97,9 @@
                                     <div class="mobile">
                                         <div class="address-display__button-group">
                                             @if ($address->trans_status == 1)
-                                                <button class="address-btn-action-primary--disable">Thiết Lập Mặc
-                                                    Định</button>
+                                                <button class="address-btn-action-primary--disable">
+                                                    Thiết Lập Mặc Định
+                                                </button>
                                             @else
                                                 <form action="{{ URL::to('process_mode_default') }}" method="post">
                                                     @csrf
@@ -184,7 +187,7 @@
     <div class="modal_add_address modal" id="modal_add_address">
         <!-- Modal content -->
         <div class="modal-content_address container">
-            <div class="modal-header-cus modal-header-address">
+            <div class="modal-header-cus modal-header-address border_top_3">
                 <span class="close" id="btn_close_modal">&times;</span>
                 <h4>Địa Chỉ Mới</h4>
             </div>
@@ -223,7 +226,7 @@
             <div class="content-modal-footer-address">
                 <button class="btn btn-secondary btn-back-modal-address" id="close" style="margin-right: 10px">TRỞ
                     LẠI</button>
-                <button class="btn btn-success btn_add_address btn_check_name_input">HOÀN THÀNH</button>
+                <button class="btn btn-success btn_add_address btn_check_name_input cus_main_bg cus_main_text">HOÀN THÀNH</button>
             </div>
         </div>
     </div>
@@ -231,7 +234,7 @@
     <div class="modal_delete_address modal" id="modal_delete_address">
         <!-- Modal content -->
         <div class="modal-content_delete_address container" style="height: auto">
-            <div class="modal-header-cus modal-header-address">
+            <div class="modal-header-cus modal-header-address border_top_3">
                 <span class="close_delete_address close" id="close_modal_delete_address">&times;</span>
                 <h4>Thông báo</h4>
             </div>
@@ -246,7 +249,7 @@
             </div>
             <div class="content-modal-footer-address">
                 <button class="btn btn-secondary btn-back-modal-address" id="close_delete_address" style="margin-right: 10px">TRỞ LẠI</button>
-                <button class="btn btn-success btn_delete_address">XÓA</button>
+                <button class="btn btn-success btn_delete_address cus_main_bg cus_main_text">XÓA</button>
             </div>
         </div>
     </div>
@@ -254,7 +257,7 @@
     <div class="modal_update_address modal" id="modal_update_address">
         <!-- Modal content -->
         <div class="modal-content_address container">
-            <div class="modal-header-cus modal-header-address">
+            <div class="modal-header-cus modal-header-address border_top_3">
                 <span class="close_update_address close">&times;</span>
                 <h4>Địa Chỉ Mới</h4>
             </div>
@@ -294,7 +297,7 @@
             </div>
             <div class="content-modal-footer-address">
                 <button class="btn btn-secondary btn-back-modal-address" id="close_update_address" style="margin-right: 10px">TRỞ LẠI</button>
-                <button class="btn btn-success btn_update_address">HOÀN THÀNH</button>
+                <button class="btn btn-success btn_update_address cus_main_bg cus_main_text">HOÀN THÀNH</button>
             </div>
         </div>
     </div>

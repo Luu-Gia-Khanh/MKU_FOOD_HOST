@@ -88,7 +88,7 @@
                                             @if ($status_order_detail->order_id == $order->order_id)
                                                 @foreach ($status_order as $status)
                                                     @if ($status->status_id == $status_order_detail->status_id && $status_order_detail->status == 1)
-                                                        <span class="head-order-detail-right--text-status">{{ $status->status_name }}</span>
+                                                        <span class="head-order-detail-right--text-status cus_main_color">{{ $status->status_name }}</span>
                                                     @endif
                                                 @endforeach
                                             @endif
@@ -174,7 +174,7 @@
                                                     @endif
                                                     >
                                                     <span class="timeline--datetime">{{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $order_detail_status->time_status)->format('H:i d-m-Y') }}</span>
-                                                    <span class="timeline--status" @if ($order_detail_status->status == 1)
+                                                    <span class="timeline--status cus_main_color" @if ($order_detail_status->status == 1)
                                                         id="timeline--status-active"
                                                 @endif
                                                 >
@@ -254,7 +254,7 @@
                                         <div class="item-order-detail-bill--left">
                                             <span>Tổng số tiền</span>
                                         </div>
-                                        <div class="item-order-detail-bill--right item-order-detail-bill--right-total-price">
+                                        <div class="item-order-detail-bill--right item-order-detail-bill--right-total-price cus_main_color">
                                             {{ number_format($order->total_price, 0, '.', '.') }}₫
                                         </div>
                                     </div>

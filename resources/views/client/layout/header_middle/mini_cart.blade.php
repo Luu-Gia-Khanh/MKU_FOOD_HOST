@@ -3,7 +3,7 @@
         <a href="javascript:void(0)" class="link-to">
             <span class="icon-qty-combine">
                 <i class="icon-cart-mini biolife-icon"></i>
-                <span class="qty total_quantity_cart">
+                <span class="qty total_quantity_cart cus_main_bg cus_main_text">
                     @if(isset($all_cart))
                         {{ count($all_cart) }}
                     @endif
@@ -59,10 +59,6 @@
 
                                                     </div>
                                                 </div>
-                                                {{-- <div class="action">
-                                                    <a href="#" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                                                    <a href="#" class="remove"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                                </div> --}}
                                             @endif
                                         @endforeach
                                     </div>
@@ -73,7 +69,7 @@
 
                     </ul>
                     <p class="btn-control" style="display: flex; justify-content: flex-end">
-                        <a href="{{ URL::to('show_cart') }}" class="btn view-cart" style="border-radius: 2px">
+                        <a href="{{ URL::to('show_cart') }}" class="btn view-cart cus_main_bg cus_main_text" style="border-radius: 2px">
                             Xem Giỏ Hàng
                         </a>
                         {{-- <a href="#" class="btn">checkout</a> --}}

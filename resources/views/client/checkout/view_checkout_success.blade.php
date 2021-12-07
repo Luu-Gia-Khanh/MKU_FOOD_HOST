@@ -34,15 +34,15 @@
                     </div>
                     <div class="space-between">
                         <div class="txt">Tổng thanh toán</div>
-                        <div class=""><strong style="color: rgb(69, 165, 31);">{{ number_format($summary_total_order, 0, ',', '.') }} vnđ</strong></div>
+                        <div class=""><strong class="cus_main_color">{{ number_format($summary_total_order, 0, ',', '.') }} vnđ</strong></div>
                     </div>
                     <div class="space-between">
                         <div class="txt">Tình trạng</div>
                         <div class="">
                             @if ($status == 0)
-                                <strong style="color: rgb(69, 165, 31);">Chưa thanh toán</strong>
+                                <strong class="cus_main_color">Chưa thanh toán</strong>
                             @else
-                                <strong style="color: rgb(69, 165, 31);">Đã thanh toán</strong>
+                                <strong class="cus_main_color">Đã thanh toán</strong>
                             @endif
 
                         </div>
@@ -53,7 +53,7 @@
                     <div class="" style="font-weight: bold">Cảm ơn bạn đã tin tưởng và giao dịch tại MKU_FOOD</div>
                     <div class="" style="font-weight: bold; padding-top: 15px">Ban quản trị MKU_FOOD</div>
                     <div class="content-btn" style="display: flex; justify-content: center">
-                        <a href="{{ URL::to('/') }}" class="btn btn-success" style="margin: 5px">Tiếp tục mua sắm</a>
+                        <a href="{{ URL::to('/') }}" class="btn btn-success cus_main_bg cus_main_text" style="margin: 5px">Tiếp tục mua sắm</a>
                         <a href="{{ URL::to('user/order/'.$orders->order_id) }}"
                              class="btn btn-default" style="margin: 5px">Chi tiết đơn hàng
                         </a>

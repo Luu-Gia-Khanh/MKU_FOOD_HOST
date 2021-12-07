@@ -28,6 +28,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('public/back_end/src/styles/custom.css') }}">
 
     <link rel="stylesheet" href="{{ asset('public/font_end/responsive/mobile.css') }}">
+
+    @include('client.css_custom')
 </head>
 
 <body class="login-page">
@@ -40,13 +42,12 @@
             </div>
             <div class="login-menu">
                 <ul>
-                    <li><a href="login_client" style="color: #7faf51">Đăng Nhập</a></li>
+                    <li><a href="login_client" class="cus_main_color">Đăng Nhập</a></li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="login-wrap d-flex align-items-center flex-wrap justify-content-center" style="
-                background-color: #7faf51;">
+    <div class="login-wrap d-flex align-items-center flex-wrap justify-content-center cus_main_bg">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6 col-lg-7 laptop">
@@ -57,7 +58,7 @@
                 <div class="col-md-6 col-lg-5">
                     <div class="login-box bg-white box-shadow border-radius-10">
                         <div class="login-title">
-                            <h2 class="text-center" style="color: #7faf51">Đăng Ký</h2>
+                            <h2 class="text-center cus_main_color">Đăng Ký</h2>
                         </div>
                         @if ($errors->any())
                             <div class="alert alert-danger alert-blog">{{ $errors->first() }}</div>
@@ -94,26 +95,10 @@
                                     <span class="input-group-text"><i class="icon-copy dw dw-padlock"></i></span>
                                 </div>
                             </div>
-                            {{-- <div class="row pb-30">
-								<div class="col-6">
-									<div class="custom-control custom-checkbox">
-										<input type="checkbox" class="custom-control-input" id="customCheck1">
-										<label class="custom-control-label" for="customCheck1">Remember</label>
-									</div>
-								</div>
-								<div class="col-6">
-									<div class="forgot-password"><a href="forgot-password.html">Forgot Password</a></div>
-								</div>
-							</div> --}}
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="input-group mb-0">
-                                        <!--
-           use code for form submit
-           <input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign In">
-          -->
-                                        <input type="submit" class="btn btn-lg btn-block" style="
-          background-color: #7faf51; color:white;" value="Đăng Ký" />
+                                        <input type="submit" class="btn btn-lg btn-block cus_main_text cus_main_bg" value="Đăng Ký" />
                                     </div>
                                     <div class="row">
                                         <div class="col-5 horizontal-line"></div>

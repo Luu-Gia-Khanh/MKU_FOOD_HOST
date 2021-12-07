@@ -75,16 +75,22 @@
                             <div class="col-xs-12">
                                 <div class="card">
                                     <div class="carousel card-block">
-                                        <img class="card-img-top" src="{{ asset('public/upload/' . $product->product_image) }}" style="height: 428px; width: 428px" />
+                                        <img class="card-img-top"
+                                            src="{{ asset('public/upload/' . $product->product_image) }}"
+                                            style="height: 428px; width: 428px" />
                                         @foreach ($all_image as $image)
-                                            <img class="card-img-top" src="{{ asset('public/upload/' . $image->image) }}" style="height: 428px; width: 428px" />
+                                            <img class="card-img-top"
+                                                src="{{ asset('public/upload/' . $image->image) }}"
+                                                style="height: 428px; width: 428px" />
                                         @endforeach
                                     </div>
                                 </div>
                                 <div class="carousel-nav card-block slide_image_detail_product">
-                                    <img style="width: 89px; height: 89px;" class="card-img-top" src="{{ asset('public/upload/' . $product->product_image) }}" />
+                                    <img style="width: 89px; height: 89px;" class="card-img-top"
+                                        src="{{ asset('public/upload/' . $product->product_image) }}" />
                                     @foreach ($all_image as $image)
-                                        <img style="width: 89px; height: 89px;" class="card-img-top" src="{{ asset('public/upload/' . $image->image) }}" />
+                                        <img style="width: 89px; height: 89px;" class="card-img-top"
+                                            src="{{ asset('public/upload/' . $image->image) }}" />
                                     @endforeach
                                 </div>
                             </div>
@@ -94,8 +100,10 @@
                     <div class="product-attribute">
                         <h3 class="title">{{ $product->product_name }}</h3>
                         <div class="rating">
-                            <p class="star-rating"><span class="width-80percent" style="width: {{ $avg_rating * 20 }}%"></span></p>
-                            <span class="review-count count_rating_on_detail" style="font-size: 15px">({{ count($all_rating_to_count) }} Đánh Giá)</span>
+                            <p class="star-rating"><span class="width-80percent"
+                                    style="width: {{ $avg_rating * 20 }}%"></span></p>
+                            <span class="review-count count_rating_on_detail"
+                                style="font-size: 15px">({{ count($all_rating_to_count) }} Đánh Giá)</span>
                             <span class="review-count count_comment_on_detail" style="font-size: 15px"> |
                                 {{ count($all_comment_to_count) }} Bình Luận</span>
                             <span class="qa-text count_product_saled">{{ $info_rating_saled->count_product_saled }} Đã
@@ -131,7 +139,8 @@
                                 </del>
                                 <ins>
                                     <span class="price-amount">
-                                        <span class="badge custom_badge">GIẢM {{ $price_discount->percent_discount }}%</span>
+                                        <span class="badge custom_badge cus_main_bg cus_main_text">GIẢM
+                                            {{ $price_discount->percent_discount }}%</span>
                                     </span>
                                 </ins>
                             @endif
@@ -149,7 +158,7 @@
                                 @if (count($all_product_voucher) > 0)
                                     @foreach ($all_product_voucher as $product_voucher)
                                         <div class="content__voucher-item">
-                                            <span>Giảm {{ ($product_voucher->voucher_amount / $price->price) * 100 }}%</span>
+                                            <span>Giảm {{ number_format(($product_voucher->voucher_amount / $price->price) * 100, 0, '.','.') }}%</span>
                                         </div>
                                     @endforeach
                                 @else
@@ -191,8 +200,11 @@
                                                 @if ($count_voucher > 0)
                                                     <a>Lưu</a>
                                                 @else
-                                                    <a class="btn_saved_voucher_{{ $product_voucher->voucher_id }}" style="display: none;">Lưu</a>
-                                                    <button class="btn_save_voucher btn_save_voucher_{{ $product_voucher->voucher_id }}" data-id="{{ $product_voucher->voucher_id }}">Lưu</button>
+                                                    <a class="btn_saved_voucher_{{ $product_voucher->voucher_id }}"
+                                                        style="display: none;">Lưu</a>
+                                                    <button
+                                                        class="btn_save_voucher btn_save_voucher_{{ $product_voucher->voucher_id }}"
+                                                        data-id="{{ $product_voucher->voucher_id }}">Lưu</button>
                                                 @endif
                                             </div>
                                         </div>
@@ -211,13 +223,16 @@
                                         @if ($product->product_id == $prod_qty->product_id)
                                             @if ($prod_qty->total_quantity_product > 0)
                                                 <div class="sub_content_btn_buy">
-                                                    <a href="{{ URL::to('buy_now/' . $product->product_id) }}" data-id="{{ $product->product_id }}" class="btn btn-block btn-success btn_buy_now">MUA NGAY</a>
+                                                    <a href="{{ URL::to('buy_now/' . $product->product_id) }}"
+                                                        data-id="{{ $product->product_id }}"
+                                                        class="btn btn-block btn-success btn_buy_now">MUA NGAY</a>
                                                 </div>
                                             @endif
                                         @endif
                                     @endforeach
                                 @else
-                                    <a href="{{ URL::to('login_client') }}" class="btn btn-block btn-success btn_buy_now">MUA
+                                    <a href="{{ URL::to('login_client') }}"
+                                        class="btn btn-block btn-success btn_buy_now">MUA
                                         NGAY</a>
                                 @endif
 
@@ -233,7 +248,8 @@
                         <div class="quantity-box">
                             <span class="title">Số lượng:</span>
                             <div class="qty-input">
-                                <input type="number" class="val_quantity val_qty_{{ $product->product_id }}" value="1" data-max_value="20" data-min_value="1" data-step="1">
+                                <input type="number" class="val_quantity val_qty_{{ $product->product_id }}" value="1"
+                                    data-max_value="20" data-min_value="1" data-step="1">
                                 <a href="#" class="qty-btn btn-up btn_up_add_cart" style="right: 45px">
                                     <i class="fa fa-caret-up" aria-hidden="true"></i>
                                 </a>
@@ -246,39 +262,45 @@
                             <div class="buttons">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                                 @if (Session::get('customer_id'))
-                                    <a href="#" class="btn add-to-cart-btn btn-block btn-sm add_cart_many add_cart_many_detail" data-id="{{ $product->product_id }}" style="margin-left: 0px">thêm vào giỏ hàng</a>
+                                    <a href="#"
+                                        class="btn add-to-cart-btn btn-block btn-sm add_cart_many add_cart_many_detail cus_main_bg cus_main_text"
+                                        data-id="{{ $product->product_id }}" style="margin-left: 0px">thêm vào giỏ hàng
+                                    </a>
                                 @else
-                                    <a href="{{ URL::to('login_client') }}" class="btn add-to-cart-btn btn-block btn-sm" style="margin-left: 0px">thêm vào giỏ hàng</a>
+                                    <a href="{{ URL::to('login_client') }}"
+                                        class="btn add-to-cart-btn btn-block btn-sm cus_main_bg cus_main_text"
+                                        style="margin-left: 0px">thêm vào giỏ hàng</a>
                                 @endif
 
                             </div>
                         </div>
-                        {{-- <div class="row buttons">
-                            <p class="pull-row">
-                                <a href="#" class="btn wishlist-btn">wishlist</a>
-                                <a href="#" class="btn compare-btn">compare</a>
-                            </p>
-                        </div> --}}
                         <div class="social-media">
                             <ul class="social-list">
                                 <li><a href="#" class="social-link"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                                 </li>
                                 <li><a href="#" class="social-link"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                                 </li>
-                                <li><a href="#" class="social-link"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                                <li><a href="#" class="social-link"><i class="fa fa-pinterest"
+                                            aria-hidden="true"></i></a>
                                 </li>
-                                <li><a href="#" class="social-link"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                                <li><a href="#" class="social-link"><i class="fa fa-share-alt"
+                                            aria-hidden="true"></i></a>
                                 </li>
-                                <li><a href="#" class="social-link"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                <li><a href="#" class="social-link"><i class="fa fa-instagram"
+                                            aria-hidden="true"></i></a>
                                 </li>
                             </ul>
                         </div>
                         <div class="acepted-payment-methods">
                             <ul class="payment-methods">
-                                <li><img src="{{ asset('public/font_end/assets/images/card1.jpg') }}" alt="" width="51" height="36"></li>
-                                <li><img src="{{ asset('public/font_end/assets/images/card2.jpg') }}" alt="" width="51" height="36"></li>
-                                <li><img src="{{ asset('public/font_end/assets/images/card3.jpg') }}" alt="" width="51" height="36"></li>
-                                <li><img src="{{ asset('public/font_end/assets/images/card4.jpg') }}" alt="" width="51" height="36"></li>
+                                <li><img src="{{ asset('public/font_end/assets/images/card1.jpg') }}" alt="" width="51"
+                                        height="36"></li>
+                                <li><img src="{{ asset('public/font_end/assets/images/card2.jpg') }}" alt="" width="51"
+                                        height="36"></li>
+                                <li><img src="{{ asset('public/font_end/assets/images/card3.jpg') }}" alt="" width="51"
+                                        height="36"></li>
+                                <li><img src="{{ asset('public/font_end/assets/images/card4.jpg') }}" alt="" width="51"
+                                        height="36"></li>
                             </ul>
                         </div>
                     </div>
@@ -287,15 +309,18 @@
                 <!-- Tab info -->
                 <div class="product-tabs single-layout biolife-tab-contain" style="margin-top: 20px;">
                     <div class="tab-head" style="background-color: #fff;">
-                        <ul class="tabs" style="padding: 16px 0 16px 5px; border-bottom: 1px solid rgba(0, 0, 0, 0.09);">
+                        <ul class="tabs"
+                            style="padding: 16px 0 16px 5px; border-bottom: 1px solid rgba(0, 0, 0, 0.09);">
                             <li class="tab-element active"><a href="#tab_1st" class="tab-link">Mô Tả Sản Phẩm</a>
                             </li>
-                            <li class="tab-element"><a href="#tab_4th" class="tab-link">Đánh Giá Sản Phẩm <sup class="count_rating_tab">({{ count($all_rating_to_count) }})</sup></a>
+                            <li class="tab-element"><a href="#tab_4th" class="tab-link">Đánh Giá Sản Phẩm <sup
+                                        class="count_rating_tab">({{ count($all_rating_to_count) }})</sup></a>
                             </li>
                         </ul>
                     </div>
                     <div class="tab-content cus_bg_product_detail_tab_content text-justify">
-                        <div id="tab_1st" class="tab-contain desc-tab active" style="padding: 5px; padding-top: 0px; border-bottom: none;">
+                        <div id="tab_1st" class="tab-contain desc-tab active"
+                            style="padding: 5px; padding-top: 0px; border-bottom: none;">
                             <p class="desc">{!! $product->product_desc !!}</p>
                         </div>
                         <div id="tab_4th" class="tab-contain review-tab">
@@ -304,10 +329,12 @@
                                     <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
 
                                         <div class="rating-info" style="padding-left: 5px;">
-                                            <p class="index" style="font-size: 18px; font-weight: bold"><strong class="rating">{{ number_format($avg_rating, 1, '.', '.') }}</strong>trên
+                                            <p class="index" style="font-size: 18px; font-weight: bold"><strong
+                                                    class="rating">{{ number_format($avg_rating, 1, '.', '.') }}</strong>trên
                                                 5</p>
                                             <div class="rating">
-                                                <p class="star-rating"><span class="width-80percent" style="width: {{ $avg_rating * 20 }}%"></span></p>
+                                                <p class="star-rating"><span class="width-80percent"
+                                                        style="width: {{ $avg_rating * 20 }}%"></span></p>
                                             </div>
                                             <div class="content-total-rating-comment" style="display: flex;">
                                                 <p class="see-all count_rating_rating">{{ count($all_rating_to_count) }}
@@ -320,10 +347,13 @@
                                                 <li>
                                                     <div class="detail-for">
                                                         <span class="option-name">
-                                                            5 <i class="fa fa-star-o" aria-hidden="true" style="color: #68645f; font-size: 16px"></i>
+                                                            5 <i class="fa fa-star-o" aria-hidden="true"
+                                                                style="color: #68645f; font-size: 16px"></i>
                                                         </span>
                                                         <span class="progres">
-                                                            <span class="line-100percent"><span class="percent width-30percent" style="width: {{ $persen_rating_5 }}%"></span></span>
+                                                            <span class="line-100percent"><span
+                                                                    class="percent width-30percent"
+                                                                    style="width: {{ $persen_rating_5 }}%"></span></span>
                                                         </span>
                                                         <span class="number">{{ $persen_rating_5 }}%</span>
                                                     </div>
@@ -331,10 +361,13 @@
                                                 <li>
                                                     <div class="detail-for">
                                                         <span class="option-name">
-                                                            4 <i class="fa fa-star-o" aria-hidden="true" style="color: #68645f; font-size: 16px"></i>
+                                                            4 <i class="fa fa-star-o" aria-hidden="true"
+                                                                style="color: #68645f; font-size: 16px"></i>
                                                         </span>
                                                         <span class="progres">
-                                                            <span class="line-100percent"><span class="percent width-30percent" style="width: {{ $persen_rating_4 }}%"></span></span>
+                                                            <span class="line-100percent"><span
+                                                                    class="percent width-30percent"
+                                                                    style="width: {{ $persen_rating_4 }}%"></span></span>
                                                         </span>
                                                         <span class="number">{{ $persen_rating_4 }}%</span>
                                                     </div>
@@ -342,10 +375,13 @@
                                                 <li>
                                                     <div class="detail-for">
                                                         <span class="option-name">
-                                                            3 <i class="fa fa-star-o" aria-hidden="true" style="color: #68645f; font-size: 16px"></i>
+                                                            3 <i class="fa fa-star-o" aria-hidden="true"
+                                                                style="color: #68645f; font-size: 16px"></i>
                                                         </span>
                                                         <span class="progres">
-                                                            <span class="line-100percent"><span class="percent width-40percent" style="width: {{ $persen_rating_3 }}%"></span></span>
+                                                            <span class="line-100percent"><span
+                                                                    class="percent width-40percent"
+                                                                    style="width: {{ $persen_rating_3 }}%"></span></span>
                                                         </span>
                                                         <span class="number">{{ $persen_rating_3 }}%</span>
                                                     </div>
@@ -353,10 +389,13 @@
                                                 <li>
                                                     <div class="detail-for">
                                                         <span class="option-name">
-                                                            2 <i class="fa fa-star-o" aria-hidden="true" style="color: #68645f; font-size: 16px"></i>
+                                                            2 <i class="fa fa-star-o" aria-hidden="true"
+                                                                style="color: #68645f; font-size: 16px"></i>
                                                         </span>
                                                         <span class="progres">
-                                                            <span class="line-100percent"><span class="percent width-20percent" style="width: {{ $persen_rating_2 }}%"></span></span>
+                                                            <span class="line-100percent"><span
+                                                                    class="percent width-20percent"
+                                                                    style="width: {{ $persen_rating_2 }}%"></span></span>
                                                         </span>
                                                         <span class="number">{{ $persen_rating_2 }}%</span>
                                                     </div>
@@ -364,10 +403,13 @@
                                                 <li>
                                                     <div class="detail-for">
                                                         <span class="option-name">
-                                                            1 <i class="fa fa-star-o" aria-hidden="true" style="color: #68645f; font-size: 16px"></i>
+                                                            1 <i class="fa fa-star-o" aria-hidden="true"
+                                                                style="color: #68645f; font-size: 16px"></i>
                                                         </span>
                                                         <span class="progres">
-                                                            <span class="line-100percent"><span class="percent width-10percent" style="width: {{ $persen_rating_1 }}%"></span></span>
+                                                            <span class="line-100percent"><span
+                                                                    class="percent width-10percent"
+                                                                    style="width: {{ $persen_rating_1 }}%"></span></span>
                                                         </span>
                                                         <span class="number">{{ $persen_rating_1 }}%</span>
                                                     </div>
@@ -386,33 +428,48 @@
                                                         <label>1. Bạn cảm thấy sản phẩm này như thế nào ?</label>
                                                         <p class="stars">
                                                             <span>
-                                                                <a class="btn-rating choose_rating" data-value="1" href="#">
-                                                                    <i class="fa fa-star-o" aria-hidden="true" style="font-size: 18px"></i>
+                                                                <a class="btn-rating choose_rating" data-value="1"
+                                                                    href="#">
+                                                                    <i class="fa fa-star-o" aria-hidden="true"
+                                                                        style="font-size: 18px"></i>
                                                                 </a>
-                                                                <a class="btn-rating choose_rating" data-value="2" href="#">
-                                                                    <i class="fa fa-star-o" aria-hidden="true" style="font-size: 18px"></i>
+                                                                <a class="btn-rating choose_rating" data-value="2"
+                                                                    href="#">
+                                                                    <i class="fa fa-star-o" aria-hidden="true"
+                                                                        style="font-size: 18px"></i>
                                                                 </a>
-                                                                <a class="btn-rating choose_rating" data-value="3" href="#">
-                                                                    <i class="fa fa-star-o" aria-hidden="true" style="font-size: 18px"></i>
+                                                                <a class="btn-rating choose_rating" data-value="3"
+                                                                    href="#">
+                                                                    <i class="fa fa-star-o" aria-hidden="true"
+                                                                        style="font-size: 18px"></i>
                                                                 </a>
-                                                                <a class="btn-rating choose_rating" data-value="4" href="#">
-                                                                    <i class="fa fa-star-o" aria-hidden="true" style="font-size: 18px"></i>
+                                                                <a class="btn-rating choose_rating" data-value="4"
+                                                                    href="#">
+                                                                    <i class="fa fa-star-o" aria-hidden="true"
+                                                                        style="font-size: 18px"></i>
                                                                 </a>
-                                                                <a class="btn-rating choose_rating" data-value="5" href="#">
-                                                                    <i class="fa fa-star-o" aria-hidden="true" style="font-size: 18px"></i>
+                                                                <a class="btn-rating choose_rating" data-value="5"
+                                                                    href="#">
+                                                                    <i class="fa fa-star-o" aria-hidden="true"
+                                                                        style="font-size: 18px"></i>
                                                                 </a>
                                                             </span>
                                                         </p>
                                                     </div>
                                                 @else
-                                                    <input type="hidden" value="{{ Session::get('rated_' . $product->product_id) }}" class="val_hidden_number_rating">
+                                                    <input type="hidden"
+                                                        value="{{ Session::get('rated_' . $product->product_id) }}"
+                                                        class="val_hidden_number_rating">
                                                 @endif
                                                 <p class="form-row">
                                                     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                                                    <textarea name="comment" class="comment_message" id="txt_comment" cols="30" rows="10" style="max-width: 500px;" placeholder="Viết đánh giá của bạn về sản phẩm này..."></textarea>
+                                                    <textarea name="comment" class="comment_message" id="txt_comment"
+                                                        cols="30" rows="10" style="max-width: 500px;"
+                                                        placeholder="Viết đánh giá của bạn về sản phẩm này..."></textarea>
                                                 </p>
                                                 <p class="form-row">
-                                                    <button type="submit" name="submit" class="send_comment_rating">Gửi đánh
+                                                    <button type="submit" name="submit"
+                                                        class="send_comment_rating cus_main_bg cus_main_text">Gửi đánh
                                                         giá</button>
                                                 </p>
                                             </div>
@@ -425,16 +482,21 @@
                                         @if (count($all_comment) > 0)
                                             @foreach ($all_comment as $comment)
                                                 @if ($comment->status == 0 && $comment->customer_id == Session::get('customer_id'))
-                                                    <li class="review" style="margin-right: 16px; margin-left: -16px; opacity: .8;background-color:#f5f5f5;">
+                                                    <li class="review"
+                                                        style="margin-right: 16px; margin-left: -16px; opacity: .8;background-color:#f5f5f5;">
                                                         <div class="comment-container" style="padding-left: 20px">
                                                             <div class="row">
-                                                                <div class="comment-content col-lg-8 col-md-9 col-sm-8 col-xs-12">
+                                                                <div
+                                                                    class="comment-content col-lg-8 col-md-9 col-sm-8 col-xs-12">
                                                                     <div class="content_info_customer">
                                                                         @foreach ($customers as $customer)
                                                                             @if ($comment->customer_id == $customer->customer_id)
-                                                                                <img src="{{ asset('public/upload/' . $customer->customer_avt) }}" style="width: 60px; height: 60px; border-radius: 50%" alt="">
+                                                                                <img src="{{ asset('public/upload/' . $customer->customer_avt) }}"
+                                                                                    style="width: 60px; height: 60px; border-radius: 50%"
+                                                                                    alt="">
                                                                                 <div class="content-name-rating">
-                                                                                    <p class="comment-in"><span class="post-name">{{ $customer->username }}</span>
+                                                                                    <p class="comment-in"><span
+                                                                                            class="post-name">{{ $customer->username }}</span>
                                                                                     </p>
                                                                                     <div class="rating">
                                                                                         <p class="star-rating">
@@ -474,23 +536,28 @@
                                                                                     $convert_persen = 100;
                                                                                 @endphp
                                                                             @endif
-                                                                            <span class="width-{{ $convert_persen }}percent"></span>
+                                                                            <span
+                                                                                class="width-{{ $convert_persen }}percent"></span>
                                                                             </p>
                                                                     </div>
                                                                 </div>
                                                 @endif
                                             @endforeach
-                                            <span class="post-date date-comment">{{ date('d/m/Y H:i a', strtotime($comment->created_at)) }}</span>
+                                            <span
+                                                class="post-date date-comment">{{ date('d/m/Y H:i a', strtotime($comment->created_at)) }}</span>
                                             @if (Session::get('customer_id') == $comment->customer_id)
                                                 <div class="option_comment">
                                                     <div class="dropdown_option_comment">
                                                         <i class="fa fa-ellipsis-h dot" style="cursor: pointer;"></i>
                                                         <div class="dropdown_content_option_comment">
-                                                            <a class="btn_open_modal_delete_comment btn_delete_comment" style="cursor: pointer;" data-id="{{ $comment->comment_id }}">
+                                                            <a class="btn_open_modal_delete_comment btn_delete_comment"
+                                                                style="cursor: pointer;"
+                                                                data-id="{{ $comment->comment_id }}">
                                                                 <i class="fa fa-trash-o" aria-hidden="true"></i> xóa
                                                             </a>
                                                             @if (Session::get('customer_id') == $comment->customer_id && $comment->status == 0)
-                                                                <a style="cursor: pointer;" class="btn_update_comment" data-id="{{ $comment->comment_id }}">
+                                                                <a style="cursor: pointer;" class="btn_update_comment"
+                                                                    data-id="{{ $comment->comment_id }}">
                                                                     <i class="fa fa-pencil" aria-hidden="true"></i> sửa
                                                                 </a>
                                                             @endif
@@ -500,14 +567,19 @@
                                             @endif
                                             {{-- </p> --}}
                                 </div>
-
-                                <p class="author place_order" style="margin-left: 70px"><i class="fa fa-check-circle" style="color: #7faf51"></i> đã mua tại <b class="brand_mku">MKU_FOOD</b></p>
-                                <p class="comment-text comment_message comment_message_{{ $comment->comment_id }}" style="font-size: 15px">{{ $comment->comment_message }}</p>
-                                <div class="content_area_update_comment content_area_update_comment_{{ $comment->comment_id }}">
-                                    <textarea class="area_update_comment area_update_comment_{{ $comment->comment_id }}" style="padding: 2px 5px ">{{ $comment->comment_message }}</textarea>
+                                <p class="author place_order" style="margin-left: 70px"><i class="fa fa-check-circle"
+                                        style="color: #7faf51"></i> đã mua tại <b class="brand_mku">MKU_FOOD</b></p>
+                                <p class="comment-text comment_message comment_message_{{ $comment->comment_id }}"
+                                    style="font-size: 15px">{{ $comment->comment_message }}</p>
+                                <div
+                                    class="content_area_update_comment content_area_update_comment_{{ $comment->comment_id }}">
+                                    <textarea class="area_update_comment area_update_comment_{{ $comment->comment_id }}"
+                                        style="padding: 2px 5px ">{{ $comment->comment_message }}</textarea>
                                     <div class="content_btn_update_comment">
-                                        <button class="btn btn-secondary btn_huy_update_comment" data-id="{{ $comment->comment_id }}">Hủy</button>
-                                        <button class="btn btn-success btn_confirm_update_comment" data-id="{{ $comment->comment_id }}">Sửa</button>
+                                        <button class="btn btn-secondary btn_huy_update_comment"
+                                            data-id="{{ $comment->comment_id }}">Hủy</button>
+                                        <button class="btn btn-success btn_confirm_update_comment"
+                                            data-id="{{ $comment->comment_id }}">Sửa</button>
                                     </div>
                                 </div>
                             </div>
@@ -519,28 +591,37 @@
                                     @endphp
                                     @if (isset($session))
                                         <li>
-                                            <a class="btn-act like btn_useful_comment btn_useful_comment_{{ $comment->comment_id }}" style="color: #7faf51; cursor: pointer;" data-id="{{ $comment->comment_id }}">
+                                            <a class="btn-act like btn_useful_comment btn_useful_comment_{{ $comment->comment_id }} cus_main_color"
+                                                style="cursor: pointer;"
+                                                data-id="{{ $comment->comment_id }}">
                                                 <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-                                                <span class="txt_count_comment_useful_{{ $comment->comment_id }}">Hữu ích
+                                                <span class="txt_count_comment_useful_{{ $comment->comment_id }}">Hữu
+                                                    ích
                                                     ({{ $comment->comment_useful }})</span>
                                             </a>
                                         </li>
-                                        <h4 class="announce_waiting_comment">
+                                        <h4 class="announce_waiting_comment cus_main_bg">
                                             Bình luận của bạn đang chờ xét duyệt
                                         </h4>
-                                        <input type="hidden" class="hidden_check_comment_like_{{ $comment->comment_id }}" name="" id="" value="{{ $session }}">
+                                        <input type="hidden"
+                                            class="hidden_check_comment_like_{{ $comment->comment_id }}" name="" id=""
+                                            value="{{ $session }}">
                                     @else
                                         <li>
-                                            <a class="btn-act like btn_useful_comment btn_useful_comment_{{ $comment->comment_id }}" style="cursor: pointer;" data-id="{{ $comment->comment_id }}">
+                                            <a class="btn-act like btn_useful_comment btn_useful_comment_{{ $comment->comment_id }}"
+                                                style="cursor: pointer;" data-id="{{ $comment->comment_id }}">
                                                 <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-                                                <span class="txt_count_comment_useful_{{ $comment->comment_id }}">Hữu ích
+                                                <span class="txt_count_comment_useful_{{ $comment->comment_id }}">Hữu
+                                                    ích
                                                     ({{ $comment->comment_useful }})</span>
                                             </a>
                                         </li>
-                                        <h4 class="announce_waiting_comment">
+                                        <h4 class="announce_waiting_comment cus_main_bg">
                                             Bình luận của bạn đang chờ xét duyệt
                                         </h4>
-                                        <input type="hidden" class="hidden_check_comment_like_{{ $comment->comment_id }}" name="" id="" value="{{ $session }}">
+                                        <input type="hidden"
+                                            class="hidden_check_comment_like_{{ $comment->comment_id }}" name="" id=""
+                                            value="{{ $session }}">
                                     @endif
 
                                 </ul>
@@ -557,9 +638,11 @@
                                     <div class="content_info_customer">
                                         @foreach ($customers as $customer)
                                             @if ($comment->customer_id == $customer->customer_id)
-                                                <img src="{{ asset('public/upload/' . $customer->customer_avt) }}" style="width: 60px; height: 60px; border-radius: 50%" alt="">
+                                                <img src="{{ asset('public/upload/' . $customer->customer_avt) }}"
+                                                    style="width: 60px; height: 60px; border-radius: 50%" alt="">
                                                 <div class="content-name-rating">
-                                                    <p class="comment-in"><span class="post-name">{{ $customer->username }}</span></p>
+                                                    <p class="comment-in"><span
+                                                            class="post-name">{{ $customer->username }}</span></p>
                                                     <div class="rating">
                                                         <p class="star-rating">
                                                             @php
@@ -604,17 +687,20 @@
                                 </div>
                                 @endif
                                 @endforeach
-                                <span class="post-date date-comment">{{ date('d/m/Y H:i a', strtotime($comment->created_at)) }}</span>
+                                <span
+                                    class="post-date date-comment">{{ date('d/m/Y H:i a', strtotime($comment->created_at)) }}</span>
                                 @if (Session::get('customer_id') == $comment->customer_id)
                                     <div class="option_comment">
                                         <div class="dropdown_option_comment">
                                             <i class="fa fa-ellipsis-h dot" style="cursor: pointer;"></i>
                                             <div class="dropdown_content_option_comment">
-                                                <a class="btn_open_modal_delete_comment btn_delete_comment" style="cursor: pointer;" data-id="{{ $comment->comment_id }}">
+                                                <a class="btn_open_modal_delete_comment btn_delete_comment"
+                                                    style="cursor: pointer;" data-id="{{ $comment->comment_id }}">
                                                     <i class="fa fa-trash-o" aria-hidden="true"></i> xóa
                                                 </a>
                                                 @if (Session::get('customer_id') == $comment->customer_id && $comment->status == 0)
-                                                    <a style="cursor: pointer;" class="btn_update_comment" data-id="{{ $comment->comment_id }}">
+                                                    <a style="cursor: pointer;" class="btn_update_comment"
+                                                        data-id="{{ $comment->comment_id }}">
                                                         <i class="fa fa-pencil" aria-hidden="true"></i> sửa
                                                     </a>
                                                 @endif
@@ -627,14 +713,19 @@
 
                             <p class="author place_order laptop" style="margin-left: 70px">
                                 <i class="fa fa-check-circle" style="color: #7faf51"></i>
-                                 đã mua tại <b class="brand_mku">MKU_FOOD</b>
+                                đã mua tại <b class="brand_mku">MKU_FOOD</b>
                             </p>
-                            <p class="comment-text comment_message comment_message_{{ $comment->comment_id }}" style="font-size: 15px">{{ $comment->comment_message }}</p>
-                            <div class="content_area_update_comment content_area_update_comment_{{ $comment->comment_id }}">
-                                <textarea class="area_update_comment area_update_comment_{{ $comment->comment_id }}" style="padding: 2px 5px ">{{ $comment->comment_message }}</textarea>
+                            <p class="comment-text comment_message comment_message_{{ $comment->comment_id }}"
+                                style="font-size: 15px">{{ $comment->comment_message }}</p>
+                            <div
+                                class="content_area_update_comment content_area_update_comment_{{ $comment->comment_id }}">
+                                <textarea class="area_update_comment area_update_comment_{{ $comment->comment_id }}"
+                                    style="padding: 2px 5px ">{{ $comment->comment_message }}</textarea>
                                 <div class="content_btn_update_comment">
-                                    <button class="btn btn-secondary btn_huy_update_comment" data-id="{{ $comment->comment_id }}">Hủy</button>
-                                    <button class="btn btn-success btn_confirm_update_comment" data-id="{{ $comment->comment_id }}">Sửa</button>
+                                    <button class="btn btn-secondary btn_huy_update_comment"
+                                        data-id="{{ $comment->comment_id }}">Hủy</button>
+                                    <button class="btn btn-success btn_confirm_update_comment"
+                                        data-id="{{ $comment->comment_id }}">Sửa</button>
                                 </div>
                             </div>
                         </div>
@@ -645,19 +736,24 @@
                                     $session = Session::get('user_like_comment_' . $comment->comment_id);
                                 @endphp
                                 @if (isset($session))
-                                    <li><a class="btn-act like btn_useful_comment btn_useful_comment_{{ $comment->comment_id }}" style="color: #7faf51; cursor: pointer;" data-id="{{ $comment->comment_id }}">
+                                    <li><a class="btn-act like btn_useful_comment btn_useful_comment_{{ $comment->comment_id }}"
+                                            style="color: #7faf51; cursor: pointer;"
+                                            data-id="{{ $comment->comment_id }}">
                                             <i class="fa fa-thumbs-up" aria-hidden="true"></i>
                                             <span class="txt_count_comment_useful_{{ $comment->comment_id }}">Hữu ích
                                                 ({{ $comment->comment_useful }})</span>
                                         </a></li>
-                                    <input type="hidden" class="hidden_check_comment_like_{{ $comment->comment_id }}" name="" id="" value="{{ $session }}">
+                                    <input type="hidden" class="hidden_check_comment_like_{{ $comment->comment_id }}"
+                                        name="" id="" value="{{ $session }}">
                                 @else
-                                    <li><a class="btn-act like btn_useful_comment btn_useful_comment_{{ $comment->comment_id }}" style="cursor: pointer;" data-id="{{ $comment->comment_id }}">
+                                    <li><a class="btn-act like btn_useful_comment btn_useful_comment_{{ $comment->comment_id }}"
+                                            style="cursor: pointer;" data-id="{{ $comment->comment_id }}">
                                             <i class="fa fa-thumbs-up" aria-hidden="true"></i>
                                             <span class="txt_count_comment_useful_{{ $comment->comment_id }}">Hữu ích
                                                 ({{ $comment->comment_useful }})</span>
                                         </a></li>
-                                    <input type="hidden" class="hidden_check_comment_like_{{ $comment->comment_id }}" name="" id="" value="{{ $session }}">
+                                    <input type="hidden" class="hidden_check_comment_like_{{ $comment->comment_id }}"
+                                        name="" id="" value="{{ $session }}">
                                 @endif
 
                             </ul>
@@ -669,7 +765,8 @@
             @endif
             @endforeach
         @else
-            <div class="center pd-20" style="font-size: 18px;padding-top: 30px; opacity: .5;">Sản phẩm chưa có đánh giá nào
+            <div class="center pd-20" style="font-size: 18px;padding-top: 30px; opacity: .5;">Sản phẩm chưa có đánh giá
+                nào
             </div>
             @endif
             </ol>
@@ -710,7 +807,7 @@
                 <div class="row">
                     <div id="main-content" class="main-content col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="block-item head__title" style="margin-top: -25px;">
-                            <div class="head__title--text">
+                            <div class="head__title--text cus_main_color border_bottom_4">
                                 Sản Phẩm Liên Quan
                             </div>
                         </div>
@@ -731,32 +828,48 @@
                                         <div class="product-thumb">
                                             <form>
                                                 @csrf
-                                                <input type="hidden" value="{{ $product_relate->product_name }}" id="recently_viewed_product_name_{{ $product_relate->product_id }}">
-                                                <input type="hidden" value="{{ number_format($price_discount->price_now, 0, ',', '.') }}₫" id="recently_viewed_product_price_{{ $product_relate->product_id }}">
+                                                <input type="hidden" value="{{ $product_relate->product_name }}"
+                                                    id="recently_viewed_product_name_{{ $product_relate->product_id }}">
+                                                <input type="hidden"
+                                                    value="{{ number_format($price_discount->price_now, 0, ',', '.') }}₫"
+                                                    id="recently_viewed_product_price_{{ $product_relate->product_id }}">
                                             </form>
-                                            <a href="{{ URL::to('product_detail_slug/' . $product_relate->slug) }}" class="link-to-product btn_recently_viewed" data-id="{{ $product_relate->product_id }}"
+                                            <a href="{{ URL::to('product_detail_slug/' . $product_relate->slug) }}"
+                                                class="link-to-product btn_recently_viewed"
+                                                data-id="{{ $product_relate->product_id }}"
                                                 id="recently_viewed_product_detail_{{ $product_relate->product_id }}">
-                                                <img src="{{ asset('public/upload/' . $product_relate->product_image) }}" alt="dd" style="width: 220px; height: 220px" class="product-thumnail"
+                                                <img src="{{ asset('public/upload/' . $product_relate->product_image) }}"
+                                                    alt="dd" style="width: 220px; height: 220px" class="product-thumnail"
                                                     id="recently_viewed_product_img_{{ $product_relate->product_id }}">
                                             </a>
-                                            <span href="#" class="lookup get_val_quickview btn_call_quickview_detail btn_open_modal" data-id="{{ $product_relate->product_id }}"><i class="biolife-icon icon-search"></i></span>
+                                            <span href="#"
+                                                class="lookup get_val_quickview btn_call_quickview_detail btn_open_modal"
+                                                data-id="{{ $product_relate->product_id }}"><i
+                                                    class="biolife-icon icon-search"></i></span>
                                         </div>
                                         <div class="info">
                                             <h4 class="product-title">
-                                                <a href="{{ URL::to('product_detail_slug/' . $product_relate->slug) }}" class="pr-name name_product cus_prod_name_card_sm btn_recently_viewed" data-id="{{ $product_relate->product_id }}">
+                                                <a href="{{ URL::to('product_detail_slug/' . $product_relate->slug) }}"
+                                                    class="pr-name name_product cus_prod_name_card_sm btn_recently_viewed"
+                                                    data-id="{{ $product_relate->product_id }}">
                                                     {{ $product_relate->product_name }}
                                                 </a>
                                             </h4>
                                             <div class="price">
                                                 @if ($price_discount->percent_discount == 0)
-                                                    <ins><span class="price-amount cus_price_card_sm" style="font-size: 16px;">
-                                                            <span class="currencySymbol">{{ number_format($price_discount->price_now, 0, ',', '.') }}₫</span>
+                                                    <ins><span class="price-amount cus_price_card_sm"
+                                                            style="font-size: 16px;">
+                                                            <span
+                                                                class="currencySymbol">{{ number_format($price_discount->price_now, 0, ',', '.') }}₫</span>
                                                     </ins>
                                                 @else
-                                                    <ins><span class="price-amount cus_price_card_sm" style="font-size: 16px;">
-                                                            <span class="currencySymbol">{{ number_format($price_discount->price_now, 0, ',', '.') }}₫</span>
+                                                    <ins><span class="price-amount cus_price_card_sm"
+                                                            style="font-size: 16px;">
+                                                            <span
+                                                                class="currencySymbol">{{ number_format($price_discount->price_now, 0, ',', '.') }}₫</span>
                                                     </ins>
-                                                    <del><span class="price-amount"><span class="currencySymbol">{{ number_format($price_discount->price_old, 0, ',', '.') }}₫</span></del>
+                                                    <del><span class="price-amount"><span
+                                                                class="currencySymbol">{{ number_format($price_discount->price_old, 0, ',', '.') }}₫</span></del>
                                                 @endif
                                             </div>
                                             <div class="content_qty_rating">
@@ -764,7 +877,8 @@
                                                             <p class="for-today">Pree Pickup Today</p> --}}
                                                 <div class="rating" style="display: flex;">
                                                     <p class="star-rating" style="align-self: flex-start">
-                                                        <span class="width-80percent" style="width:{{ $info_rating_saled->avg_rating * 20 }}%"></span>
+                                                        <span class="width-80percent"
+                                                            style="width:{{ $info_rating_saled->avg_rating * 20 }}%"></span>
                                                     </p>
                                                 </div>
                                                 <div class="availeble_product">Đã bán:
@@ -774,17 +888,21 @@
                                                 <div class="buttons" style="padding: 0px;">
                                                     {{-- wish list --}}
                                                     @if (Session::get('customer_id'))
-                                                        <a class="btn wishlist-btn btn_add_wish_lish" style="cursor: pointer;" data-id="{{ $product_relate->product_id }}">
+                                                        <a class="btn wishlist-btn btn_add_wish_lish"
+                                                            style="cursor: pointer;"
+                                                            data-id="{{ $product_relate->product_id }}">
                                                             @if ($check_already_wish->check_already == 1)
-                                                                <i class="fa fa-heart" aria-hidden="true" style="color: #7faf51"></i>
+                                                                <i class="fa fa-heart cus_main_color" aria-hidden="true"></i>
                                                             @else
-                                                                <i class="fa fa-heart icon_wish_list_{{ $product_relate->product_id }}" aria-hidden="true"></i>
+                                                                <i class="fa fa-heart icon_wish_list_{{ $product_relate->product_id }}"
+                                                                    aria-hidden="true"></i>
                                                             @endif
                                                         </a>
                                                     @else
-                                                        <a href="{{ URL::to('login_client') }}" class="btn wishlist-btn">
+                                                        <a href="{{ URL::to('login_client') }}"
+                                                            class="btn wishlist-btn">
                                                             @if ($check_already_wish->check_already == 1)
-                                                                <i class="fa fa-heart" aria-hidden="true" style="color: #7faf51"></i>
+                                                                <i class="fa fa-heart cus_main_color" aria-hidden="true"></i>
                                                             @else
                                                                 <i class="fa fa-heart" aria-hidden="true"></i>
                                                             @endif
@@ -792,20 +910,28 @@
                                                     @endif
                                                     {{-- end wish list --}}
                                                     @if (Session::get('customer_id'))
-                                                        <button href="#" class="btn add-to-cart-btn btn-block btn-sm add_cart_one" data-id="{{ $product_relate->product_id }}" style="font-size: 12px;"><i class="fa fa-cart-arrow-down"
+                                                        <button href="#"
+                                                            class="btn add-to-cart-btn btn-block btn-sm add_cart_one cus_main_bg cus_main_text"
+                                                            data-id="{{ $product_relate->product_id }}"
+                                                            style="font-size: 12px;"><i class="fa fa-cart-arrow-down"
                                                                 aria-hidden="true"></i>
                                                             thêm vào giỏ hàng
                                                         </button>
                                                     @else
-                                                        <a href="{{ URL::to('login_client') }}" class="btn add-to-cart-btn btn-block btn-sm" style="font-size: 12px;"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                                                        <a href="{{ URL::to('login_client') }}"
+                                                            class="btn add-to-cart-btn btn-block btn-sm cus_main_bg cus_main_text"
+                                                            style="font-size: 12px;"><i class="fa fa-cart-arrow-down"
+                                                                aria-hidden="true"></i>
                                                             thêm vào giỏ hàng
                                                         </a>
                                                     @endif
                                                     {{-- add cart --}}
-                                                    <input type="hidden" class="val_qty_{{ $product_relate->product_id }}" value="1">
+                                                    <input type="hidden"
+                                                        class="val_qty_{{ $product_relate->product_id }}" value="1">
                                                     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                                                     {{-- end add cart --}}
-                                                    <a href="#" class="btn compare-btn"><i class="fa fa-random" aria-hidden="true"></i></a>
+                                                    <a href="#" class="btn compare-btn"><i class="fa fa-random"
+                                                            aria-hidden="true"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -813,7 +939,8 @@
                                             <div class="content_discount_product">
                                                 <div class="content_sub_discount bg_discount">
                                                     <div class="content_title_discount">
-                                                        <span class="percent">{{ $price_discount->percent_discount }}%</span>
+                                                        <span
+                                                            class="percent">{{ $price_discount->percent_discount }}%</span>
                                                         <span class="txt_giam">giảm</span>
                                                     </div>
                                                 </div>
@@ -840,7 +967,7 @@
     <div class="modal_delete_comment modal">
         <!-- Modal content -->
         <div class="modal-content container" style="width: 40%">
-            <div class="modal-header-cus modal-header-delete_comment">
+            <div class="modal-header-cus modal-header-delete_comment border_top_3">
                 <span class="close close_modal_delete_comment">&times;</span>
                 <h4 style="font-size: 20px">Thông Báo</h4>
             </div>
@@ -852,7 +979,7 @@
                 </form>
             </div>
             <div class="content-modal-footer-address">
-                <button class="btn btn-success btn_confirm_delete_comment" style="margin-right: 10px">Xóa</button>
+                <button class="btn btn-success btn_confirm_delete_comment cus_main_bg cus_main_text" style="margin-right: 10px">Xóa</button>
                 <button class="btn btn-secondary btn_back_modal_address">Hủy</button>
             </div>
         </div>
@@ -861,7 +988,7 @@
     <div class="modal_mini_detail modal">
         <!-- Modal content -->
         <div class="modal-content container">
-            <div class="modal-header-mini_prod">
+            <div class="modal-header-mini_prod border_top_3">
                 <span class="close close_modal">&times;</span>
             </div>
             <div class="modal_body_mini_prod content_mini_detail">

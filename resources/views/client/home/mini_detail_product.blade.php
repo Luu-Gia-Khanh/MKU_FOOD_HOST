@@ -10,6 +10,7 @@
         margin-left: 10px;
     }
 </style>
+@include('client.css_custom')
 <div class="content-image">
     <img src="{{ asset('public/upload/'.$product->product_image) }}" alt="" style="width: 361px; height: 361px;">
 </div>
@@ -23,7 +24,7 @@
             <span class="width-80percent" style="width: {{ $info_rating_saled->avg_rating *20 }}%"></span>
         </p>
         <span class="count_rating"> ({{ $info_rating_saled->count_all_rating }} Đánh Giá)</span>
-        <span class="count_saled">{{ $info_rating_saled->count_product_saled }} Đã Bán</span>
+        <span class="count_saled border_left_1">{{ $info_rating_saled->count_product_saled }} Đã Bán</span>
     </div>
     <div class="price price-contain">
         @if ($price_discount->percent_discount == 0)
@@ -51,7 +52,7 @@
             </del>
             <ins>
                 <span class="price-amount">
-                    <span class="badge custom_badge">GIẢM {{ $price_discount->percent_discount }}%</span>
+                    <span class="badge custom_badge cus_main_bg">GIẢM {{ $price_discount->percent_discount }}%</span>
                 </span>
             </ins>
 
@@ -61,16 +62,16 @@
     <div class="sort_desc_product" style="font-size: 15px;">{!! $product->product_sort_desc !!}</div>
     <div class="from-cart">
         <div class="qty-input">
-            <input class="qty_prod qty_mini_detail_{{ $product->product_id }}" type="number" name="qty_mini_detail" value="1" data-max_value="100" data-min_value="1" data-step="1">
+            <input class="qty_prod qty_mini_detail_{{ $product->product_id }} cus_main_border" type="number" name="qty_mini_detail" value="1" data-max_value="100" data-min_value="1" data-step="1">
             <a href="#" class="qty-btn btn-up"><i class="fa fa-caret-up up" aria-hidden="true"></i></a>
             <a href="#" class="qty-btn btn-down"><i class="fa fa-caret-down down" aria-hidden="true"></i></a>
             <input type="hidden" name="_token" value="{{ csrf_token() }}" />
         </div>
         <div class="buttons">
             @if (Session::get('customer_id'))
-                <button class="btn add-to-cart-btn btn-bold btn_add_cart btn_add_cart_mini_detail" data-id="{{ $product->product_id }}">Thêm Vào Giỏ Hàng</button>
+                <button class="btn add-to-cart-btn btn-bold btn_add_cart btn_add_cart_mini_detail cus_main_bg cus_main_text" data-id="{{ $product->product_id }}">Thêm Vào Giỏ Hàng</button>
             @else
-                <a href="{{ URL::to('login_client') }}"class="btn add-to-cart-btn btn-bold">Thêm Vào Giỏ Hàng</a>
+                <a href="{{ URL::to('login_client') }}"class="btn add-to-cart-btn btn-bold cus_main_bg cus_main_text">Thêm Vào Giỏ Hàng</a>
             @endif
 
         </div>

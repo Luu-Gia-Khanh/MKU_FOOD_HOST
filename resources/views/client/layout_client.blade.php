@@ -30,6 +30,7 @@
     {{-- responsive --}}
     <link rel="stylesheet" href="{{ asset('public/font_end/responsive/mobile.css') }}">
     <style>
+        /*  */
         @media (min-width: 1200px) {
             .container {
                 width: 1200px;
@@ -43,8 +44,8 @@
         body {
             font-family: 'Roboto', sans-serif !important;
         }
-
     </style>
+    @include('client.css_custom')
 </head>
 <body class="biolife-body">
     <!-- Preloader -->
@@ -59,7 +60,7 @@
         </div>
         {{-- LOGO --}}
         {{-- HEADER MIDDLE --}}
-        <div class="header-middle biolife-sticky-object ">
+        <div class="header-middle biolife-sticky-object cus_top_bg">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-2 col-md-2 col-md-6 col-xs-6">

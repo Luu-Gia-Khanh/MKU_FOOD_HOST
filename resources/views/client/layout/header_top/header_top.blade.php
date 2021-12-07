@@ -1,18 +1,26 @@
-<div class="header-top bg-main hidden-xs">
+<div class="header-top bg-main hidden-xs cus_main_bg">
     <div class="container">
         <div class="top-bar left">
             <ul class="horizontal-menu">
-                <li><a href="mailto: mkufood@mku.edu.vn"><i class="fa fa-envelope"
-                            aria-hidden="true"></i>mkufood@mku.edu.vn</a></li>
-                <li><a href="tel:091163513"><i class="fa fa-phone" aria-hidden="true"></i>Liên hệ hotline: 0270 3831
-                        155</a></li>
+                <li>
+                    <a href="mailto: mkufood@mku.edu.vn" class="cus_main_text">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                        mkufood@mku.edu.vn
+                    </a>
+                </li>
+                <li>
+                    <a href="tel:091163513" class="cus_main_text">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        Liên hệ hotline: 0270 3831 155
+                    </a>
+                </li>
             </ul>
         </div>
         <div class="top-bar right" style="display: flex;">
             <ul class="social-list" style=" align-items: center; display: flex;">
-                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                <li><a href="#" class="cus_main_text"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="#" class="cus_main_text"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="#" class="cus_main_text"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
             </ul>
             <ul class="horizontal-menu">
                 @if (Session::get('customer_id'))
@@ -22,7 +30,7 @@
                     @endphp
                     <li class="header__navbar-user">
                         <img src="{{ asset('public/upload/' . $image) }}" alt="" class="header__navbar-user-img">
-                        <span class="header__navbar-user-name">{{ Session::get('username') }}</span>
+                        <span class="header__navbar-user-name cus_main_text">{{ Session::get('username') }}</span>
                         <ul class="header__navbar-user-menu" style="z-index: 100;">
                             <li class="header__navbar-user-item">
                                 <a href="{{ URL::to('user/account') }}">Tài khoản của tôi</a>
@@ -37,9 +45,9 @@
                     </li>
                 @else
                     <li>
-                        <a href="{{ URL::to('login_client') }}" class="login-link"><i
+                        <a href="{{ URL::to('login_client') }}" class="login-link cus_main_text"><i
                                 class="biolife-icon icon-login"></i>Đăng nhập/</a>
-                        <a href="{{ URL::to('register_client') }}" class="login-link">Đăng ký</a>
+                        <a href="{{ URL::to('register_client') }}" class="login-link cus_main_text">Đăng ký</a>
                     </li>
                 @endif
             </ul>

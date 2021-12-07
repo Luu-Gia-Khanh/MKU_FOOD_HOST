@@ -100,7 +100,7 @@
                                             <span class="txt_count_comment_useful_{{ $comment->comment_id }}">Hữu ích ({{ $comment->comment_useful }})</span>
                                         </a>
                                     </li>
-                                    <h4 class="announce_waiting_comment">
+                                    <h4 class="announce_waiting_comment cus_main_bg cus_main_text">
                                         Bình luận của bạn đang chờ xét duyệt
                                     </h4>
                                     <input type="hidden" class="hidden_check_comment_like_{{ $comment->comment_id }}" name="" id="" value="{{ $session }}">
@@ -111,7 +111,7 @@
                                             <span class="txt_count_comment_useful_{{ $comment->comment_id }}">Hữu ích ({{ $comment->comment_useful }})</span>
                                         </a>
                                     </li>
-                                    <h4 class="announce_waiting_comment">
+                                    <h4 class="announce_waiting_comment cus_main_bg cus_main_text">
                                         Bình luận của bạn đang chờ xét duyệt
                                     </h4>
                                     <input type="hidden" class="hidden_check_comment_like_{{ $comment->comment_id }}" name="" id="" value="{{ $session }}">
@@ -217,7 +217,7 @@
                                     $session = Session::get('user_like_comment_'.$comment->comment_id);
                                 @endphp
                                 @if (isset($session))
-                                    <li><a class="btn-act like btn_useful_comment btn_useful_comment_{{ $comment->comment_id }}" style="color: #7faf51; cursor: pointer;" data-id="{{ $comment->comment_id }}">
+                                    <li><a class="btn-act like btn_useful_comment btn_useful_comment_{{ $comment->comment_id }} cus_main_color" style="cursor: pointer;" data-id="{{ $comment->comment_id }}">
                                         <i class="fa fa-thumbs-up" aria-hidden="true"></i>
                                         <span class="txt_count_comment_useful_{{ $comment->comment_id }}">Hữu ích ({{ $comment->comment_useful }})</span>
                                     </a></li>

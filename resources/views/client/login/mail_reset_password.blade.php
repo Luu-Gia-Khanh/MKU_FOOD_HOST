@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <!-- Basic Page Info -->
     <meta charset="utf-8">
@@ -28,6 +27,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('public/back_end/src/styles/custom.css') }}">
 
     <link rel="stylesheet" href="{{ asset('public/font_end/responsive/mobile.css') }}">
+
+    @include('client.css_custom')
 </head>
 
 <body class="login-page">
@@ -40,13 +41,12 @@
             </div>
             <div class="login-menu">
                 <ul>
-                    <li><a href="{{ URL::to('register_client') }}" style="color: #7faf51">Đăng ký</a></li>
+                    <li><a href="{{ URL::to('register_client') }}" class="cus_main_color">Đăng ký</a></li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="login-wrap d-flex align-items-center flex-wrap justify-content-center" style="
-                background-color: #7faf51;">
+    <div class="login-wrap d-flex align-items-center flex-wrap justify-content-center cus_main_bg">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6 col-lg-7 laptop">
@@ -56,7 +56,7 @@
                 <div class="col-md-6 col-lg-5">
                     <div class="login-box bg-white box-shadow border-radius-10">
                         <div class="login-title">
-                            <h2 class="text-center" style="color: #7faf51">Lấy lại mật khẩu</h2>
+                            <h2 class="text-center cus_main_color">Lấy lại mật khẩu</h2>
                         </div>
                         @if ($errors->any())
                             <div class="alert alert-danger alert-blog">{{ $errors->first() }}</div>
@@ -79,8 +79,7 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="input-group mb-0 btn-login">
-                                        <input type="submit" class="btn btn-lg btn-block"
-                                            style="background-color: #7faf51; color:white;" value="Gửi" />
+                                        <input type="submit" class="btn btn-lg btn-block cus_main_bg cus_main_text" value="Gửi" />
                                     </div>
                                 </div>
                             </div>

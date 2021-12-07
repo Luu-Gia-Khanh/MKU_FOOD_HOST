@@ -178,7 +178,7 @@
 
                                     </div>
                                     <div class="btn-checkout content_btn_check_out">
-                                        <a class="btn checkout submit_form_check_out" style="border-radius: 5px">Mua Hàng</a>
+                                        <a class="btn checkout submit_form_check_out cus_main_bg cus_main_text" style="border-radius: 5px">Mua Hàng</a>
                                     </div>
                                 </div>
                             </div>
@@ -192,6 +192,7 @@
                                     </div>
                                 </div>
                             @endif
+                            {{-- cart out date --}}
                             <div class="row">
                                 <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
                                     <div class="cus_bg_show_cart_disalbe">

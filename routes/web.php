@@ -344,7 +344,19 @@ Route::prefix('admin')->group(function () {
     Route::post('find_shipping_cost', 'ShippingCostController@find_shipping_cost')->middleware('admin_manager_employee');
 
     // CUSTOM LAYOUT
+    Route::get('all_layout', 'CustomLayoutController@all_layout')->middleware('admin');
+    Route::get('add_layout', 'CustomLayoutController@add_layout')->middleware('admin');
     Route::get('custom_layout', 'CustomLayoutController@show_layout_custom');
+    Route::get('saw_layout/{layout_id}', 'CustomLayoutController@saw_layout');
+    Route::get('update_layout/{layout_id}', 'CustomLayoutController@update_layout');
+    Route::get('view_recycle_layout', 'CustomLayoutController@view_recycle_layout');
+    Route::get('re_delete_layout/{layout_id}', 'CustomLayoutController@re_delete_layout');
+
+    Route::post('process_custom_layout', 'CustomLayoutController@process_custom_layout');
+    Route::post('set_layout', 'CustomLayoutController@set_layout');
+    Route::post('process_update_layout/{layout_id}', 'CustomLayoutController@process_update_layout');
+    Route::post('soft_delete_layout', 'CustomLayoutController@soft_delete_layout');
+    Route::post('delete_forever_layout', 'CustomLayoutController@delete_forever_layout');
 });
 
 // FONT END

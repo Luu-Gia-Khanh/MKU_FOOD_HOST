@@ -15,7 +15,7 @@
                                 @endphp
                                 @if ($price_discount->percent_discount != 0)
                                     <li class="product-item">
-                                        <div class="contain-product deal-layout contain-product__deal-layout">
+                                        <div class="contain-product deal-layout contain-product__deal-layout cus_main_border">
                                             <div class="product-thumb">
                                                 <form>
                                                     @csrf
@@ -55,32 +55,32 @@
                                                     <div class="buttons">
                                                         {{-- wish list --}}
                                                     @if (Session::get('customer_id'))
-                                                    <a class="btn wishlist-btn btn_add_wish_lish" style="cursor: pointer;"
-                                                        data-id="{{ $product->product_id }}">
-                                                        @if ($check_already_wish->check_already == 1)
-                                                            <i class="fa fa-heart" aria-hidden="true" style="color: #7faf51"></i>
-                                                        @else
-                                                            <i class="fa fa-heart icon_wish_list_{{ $product->product_id }}" aria-hidden="true"></i>
-                                                        @endif
-                                                    </a>
-                                                @else
-                                                    <a href="{{ URL::to('login_client') }}"class="btn wishlist-btn" >
-                                                        @if ($check_already_wish->check_already == 1)
-                                                            <i class="fa fa-heart" aria-hidden="true" style="color: #7faf51"></i>
-                                                        @else
-                                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                                        @endif
-                                                    </a>
-                                                @endif
-                                                {{-- end wishlist --}}
+                                                        <a class="btn wishlist-btn btn_add_wish_lish" style="cursor: pointer;"
+                                                            data-id="{{ $product->product_id }}">
+                                                            @if ($check_already_wish->check_already == 1)
+                                                                <i class="fa fa-heart cus_main_color" aria-hidden="true"></i>
+                                                            @else
+                                                                <i class="fa fa-heart icon_wish_list_{{ $product->product_id }}" aria-hidden="true"></i>
+                                                            @endif
+                                                        </a>
+                                                    @else
+                                                        <a href="{{ URL::to('login_client') }}"class="btn wishlist-btn" >
+                                                            @if ($check_already_wish->check_already == 1)
+                                                                <i class="fa fa-heart cus_main_color" aria-hidden="true"></i>
+                                                            @else
+                                                                <i class="fa fa-heart" aria-hidden="true"></i>
+                                                            @endif
+                                                        </a>
+                                                    @endif
+                                                    {{-- end wishlist --}}
 
                                                         {{-- add cart --}}
                                                         @if (Session::get('customer_id'))
-                                                            <button class="btn add-to-cart-btn btn-block add_cart_one"
+                                                            <button class="btn add-to-cart-btn btn-block add_cart_one cus_main_bg cus_main_text"
                                                             data-id="{{ $product->product_id }}">thêm vào giỏ hàng</button>
                                                         @else
                                                             <a href="{{ URL::to('login_client') }}"
-                                                                class="btn add-to-cart-btn btn-block btn-sm">
+                                                                class="btn add-to-cart-btn btn-block btn-sm cus_main_bg cus_main_text">
                                                                 thêm vào giỏ hàng
                                                             </a>
                                                         @endif
@@ -146,33 +146,33 @@
                                                     {{-- end add cart --}}
                                                     <div class="buttons">
                                                         {{-- wish list --}}
-                                                    @if (Session::get('customer_id'))
-                                                    <a class="btn wishlist-btn btn_add_wish_lish" style="cursor: pointer;"
-                                                        data-id="{{ $product->product_id }}">
-                                                        @if ($check_already_wish->check_already == 1)
-                                                            <i class="fa fa-heart" aria-hidden="true" style="color: #7faf51"></i>
+                                                        @if (Session::get('customer_id'))
+                                                            <a class="btn wishlist-btn btn_add_wish_lish" style="cursor: pointer;"
+                                                                data-id="{{ $product->product_id }}">
+                                                                @if ($check_already_wish->check_already == 1)
+                                                                    <i class="fa fa-heart cus_main_color" aria-hidden="true"></i>
+                                                                @else
+                                                                    <i class="fa fa-heart icon_wish_list_{{ $product->product_id }}" aria-hidden="true"></i>
+                                                                @endif
+                                                            </a>
                                                         @else
-                                                            <i class="fa fa-heart icon_wish_list_{{ $product->product_id }}" aria-hidden="true"></i>
+                                                            <a href="{{ URL::to('login_client') }}"class="btn wishlist-btn" >
+                                                                @if ($check_already_wish->check_already == 1)
+                                                                    <i class="fa fa-heart cus_main_color" aria-hidden="true"></i>
+                                                                @else
+                                                                    <i class="fa fa-heart" aria-hidden="true"></i>
+                                                                @endif
+                                                            </a>
                                                         @endif
-                                                    </a>
-                                                @else
-                                                    <a href="{{ URL::to('login_client') }}"class="btn wishlist-btn" >
-                                                        @if ($check_already_wish->check_already == 1)
-                                                            <i class="fa fa-heart" aria-hidden="true" style="color: #7faf51"></i>
-                                                        @else
-                                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                                        @endif
-                                                    </a>
-                                                @endif
-                                                {{-- end wishlist --}}
+                                                        {{-- end wishlist --}}
 
                                                         {{-- add cart --}}
                                                         @if (Session::get('customer_id'))
-                                                            <button class="btn add-to-cart-btn btn-block add_cart_one"
+                                                            <button class="btn add-to-cart-btn btn-block add_cart_one cus_main_bg cus_main_text"
                                                             data-id="{{ $product->product_id }}">thêm vào giỏ hàng</button>
                                                         @else
                                                             <a href="{{ URL::to('login_client') }}"
-                                                                class="btn add-to-cart-btn btn-block btn-sm">
+                                                                class="btn add-to-cart-btn btn-block btn-sm cus_main_bg cus_main_text">
                                                                 thêm vào giỏ hàng
                                                             </a>
                                                         @endif

@@ -4,7 +4,7 @@
         <a href="javascript:void(0)" class="link-to" data-toggle="tooltip" title="Hooray!">
             <span class="icon-qty-combine">
                 <i class="icon-heart-bold biolife-icon"></i>
-                <span class="qty total_quantity_wishlist">
+                <span class="qty total_quantity_wishlist cus_main_bg cus_main_text">
                     @if(isset($wish_lish))
                         {{ count($wish_lish) }}
                     @endif
@@ -14,7 +14,7 @@
         <div class="cart-content">
             <div class="cart-inner show_mini_wish_list_when_add">
                 @if (count($wish_lish) > 0)
-                    <h4 style="padding: 10px; margin-top: -10px; color: #7faf51">Sản phẩm yêu thích</h4>
+                    <h4 style="padding: 10px; margin-top: -10px;" class="cus_main_color">Sản phẩm yêu thích</h4>
                     <ul class="products">
                             @foreach ($wish_lish as $wish)
                                 <li>

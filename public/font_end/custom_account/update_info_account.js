@@ -21,8 +21,6 @@ $(document).ready(function(){
         //
         var _token = $('input[name="_token"]').val();
 
-        checkName(customer_fullname);
-
         $.ajax({
             url: '../update_info_account',
             method: 'POST',

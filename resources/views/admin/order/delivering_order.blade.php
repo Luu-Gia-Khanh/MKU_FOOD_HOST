@@ -61,8 +61,10 @@
                                                 colspan="1" data-defaultsort="disabled">Phương Thức Thanh Toán</th>
                                             <th  class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                                                 colspan="1" data-defaultsort="disabled">Tình Trạng Đơn Hàng</th>
+                                            @hasrole('delivery')
                                             <th  class="datatable-nosort sorting_disabled" rowspan="1" colspan="1"
-                                                aria-label="Action" data-defaultsort="disabled">Thao Tác</th>
+                                            aria-label="Action" data-defaultsort="disabled">Thao Tác</th>
+                                            @endhasrole
                                         </tr>
                                     </thead>
                                     <tbody id="table_search">
@@ -91,9 +93,11 @@
                                                     @endif
                                                 </td>
 
+                                                @hasrole('delivery')
                                                 <td>
                                                     <button type="button" class="btn btn-success btn_confirm_delivery_success_order" data-toggle="modal" data-target="#modal_confirm_delivery_success_modal" data-id="{{ $order->order_code }}"><i class="icon-copy dw dw-delivery-truck-1"></i>Giao Thành Công</button>
                                                 </td>
+                                                @endhasrole
                                             </tr>
                                         @endforeach
                                     </tbody>

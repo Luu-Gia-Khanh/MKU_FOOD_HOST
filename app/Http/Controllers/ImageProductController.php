@@ -7,6 +7,7 @@ use App\ImageProduct;
 use App\Product;
 use App\Admin_Action_Product_Image;
 use Session;
+use DB;
 use Carbon\Carbon;
 
 class ImageProductController extends Controller
@@ -69,6 +70,7 @@ class ImageProductController extends Controller
         return view('admin.image_product.view_recycle_image',['recycle_image'=>$recycle_image,'prod_id'=>$prod_id]);
     }
     public function restore_image_product($image_id, Request $request){
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         $restore = ImageProduct::withTrashed()->where('image_id', $image_id)->restore();
         if($restore){
             $admin_action_product_image = new Admin_Action_Product_Image();
@@ -83,6 +85,7 @@ class ImageProductController extends Controller
         return redirect()->back();
     }
     public function delete_forever_image_product(Request $request){
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         $image_id = $request->image_id;
         $delete_forever = ImageProduct::withTrashed()->where('image_id', $image_id)->forceDelete();
         if($delete_forever){

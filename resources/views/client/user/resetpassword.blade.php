@@ -27,7 +27,7 @@
         <!-- Main content -->
         <div id="main-content" class="main-content">
             <div class="container">
-                <div class="row">
+                <div class="row" style="margin-bottom: 150px">
 
                     <!--sidebar-->
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
@@ -89,7 +89,7 @@
                                         <span>Xác nhận mật khẩu</span>
                                         <input class="custom-input-user password_new_confirmation" type="password" name="password_new_confirmation" style="padding: 7px 8px;">
                                     </div>
-                                    <button type="button" class="btn-update-user btn_confirm_resetpassword">Xác Nhận</button>
+                                    <button type="button" class="btn-update-user btn_confirm_resetpassword cus_main_bg cus_main_text">Xác Nhận</button>
                                 </div>
                             </form>
                         </div>

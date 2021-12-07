@@ -135,7 +135,7 @@ class CategoryController extends Controller
     public function find_category(Request $request)
     {
         $val_find_cate = $request->value_find;
-        $result_find = DB::table('Category')->where('deleted_at', null)->where('cate_name', 'LIKE', '%' . $val_find_cate . '%')->get();
+        $result_find = DB::table('category')->where('deleted_at', null)->where('cate_name', 'LIKE', '%' . $val_find_cate . '%')->get();
         echo view('admin.category.result_find_category', compact('result_find'));
     }
 

@@ -11,7 +11,6 @@
             outline: none;
         }
     </style>
-
     <div class="container laptop">
         <nav class="biolife-nav cus_breadcrumb">
             <ul>
@@ -25,7 +24,7 @@
         <!-- Main content -->
         <div id="main-content" class="main-content">
             <div class="container">
-                <div class="row">
+                <div class="row" style="margin-bottom: 50px">
                     <!--sidebar-->
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                         <nav class="user">
@@ -136,7 +135,7 @@
                                             <span>Ngày sinh</span>
                                             <input class="custom-input-user customer_birthday" type="date" name="customer_birthday" value="{{ $customer_info->customer_birthday }}" style="padding: 7px 8px;">
                                         </div>
-                                        <button type="button" class="btn-update-user btn_update_info_account">Lưu</button>
+                                        <button type="button" class="btn-update-user btn_update_info_account cus_main_bg cus_main_text">Lưu</button>
                                     </div>
                                     <div class="user-upload-img">
                                         <div id="content_image_upload">
@@ -144,7 +143,7 @@
                                         </div>
                                         <div class="input-upload-img" style="text-align: center;">
                                             {{-- <img src="{{ asset('public/upload/upimage.png') }}" height="50px" width="50px" alt="" style="cursor: pointer;"> --}}
-                                            <label for="file_upload" class="btn" style="    color: #fff; background-color: #7faf51;">Chọn Ảnh</label>
+                                            <label for="file_upload" class="btn cus_main_bg cus_main_text">Chọn Ảnh</label>
                                             <input type="file" name="customer_avt" id="file_upload" onchange="return uploadhinh()" class="custom-file-input customer_avt file_upload" style="width: 220px; opacity: 0;">
                                         </div>
                                     </div>

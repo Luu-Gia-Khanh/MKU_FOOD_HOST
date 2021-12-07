@@ -43,8 +43,8 @@
         body {
             font-family: 'Roboto', sans-serif;
         }
-
     </style>
+     @include('client.css_custom')
 </head>
 <body class="biolife-body">
     <!-- Preloader -->

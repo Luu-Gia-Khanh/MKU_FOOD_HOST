@@ -42,7 +42,10 @@
                                     <div class="da-social">
                                     <h5 class="mb-10 color-white pd-20">{{ date("d-m-Y H:i", strtotime($image->deleted_at))   }}</h5>
                                         <ul class="clearfix">
-                                            <li><a href="{{ URL::to('admin/restore_image_product/'.$image->image_id) }}" data-fancybox="images" data-toggle="tooltip" data-placement="top" title="Khôi phục hình ảnh"><i class="icon-copy fa fa-superpowers" aria-hidden="true"></i></a></li>
+                                            <li>
+                                                <a href="{{ URL::to('admin/restore_image_product/'.$image->image_id) }}"
+                                                 data-toggle="tooltip" data-placement="top" title="Khôi phục hình ảnh">
+                                                 <i class="icon-copy fa fa-superpowers" aria-hidden="true"></i></a></li>
                                             <li><a class="forever_delete_image_product_class" data-id = "{{ $image->image_id }}" data-toggle="modal" data-target="#modal_delete_forever_image" ><i class="dw dw-delete-3"></i></a></li>
                                         </ul>
                                     </div>

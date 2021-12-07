@@ -41,7 +41,6 @@
         <div id="main-content" class="main-content">
             <div class="container">
                 <div class="row">
-
                     <!--sidebar-->
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                         <nav class="user">
@@ -60,7 +59,7 @@
                             </div>
                             <div class="laptop">
                                 <ul class="user-list-module">
-                                    <li class="user-module-item user-module-item--active">
+                                    <li class="user-module-item">
                                         <a href="{{ URL::to('user/account') }}" class="user-module-item--link">Hồ sơ</a>
                                     </li>
                                     <li class="user-module-item">
@@ -73,7 +72,7 @@
                                     <li class="user-module-item">
                                         <a href="{{ URL::to('user/order') }}" class="user-module-item--link">Đơn mua</a>
                                     </li>
-                                    <li class="user-module-item">
+                                    <li class="user-module-item user-module-item--active">
                                         <a href="{{ URL::to('user/voucher') }}" class="user-module-item--link">Kho
                                             Voucher</a>
                                     </li>
@@ -97,7 +96,7 @@
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12" style="margin-bottom: 32px;">
                         <div class="content__voucher">
                             <div class="content__voucher-heading">
-                                <span class="voucher-heading-title">Voucher của bạn</span>
+                                <span class="voucher-heading-title cus_main_color">Voucher của bạn</span>
                             </div>
                             <div class="container__voucher-list">
                                 @if (count($storage_customer_voucher) > 0)
@@ -122,7 +121,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="voucher-item--right-btn">
-                                                    <a href="{{ URL::to('product_detail/' . $voucher->product_id) }}">Dùng ngay</a>
+                                                    <a href="{{ URL::to('product_detail/' . $voucher->product_id) }}" class="cus_main_bg cus_main_text">Dùng ngay</a>
                                                 </div>
                                             </div>
                                         </div>

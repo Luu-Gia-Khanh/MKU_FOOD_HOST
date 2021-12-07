@@ -23,6 +23,7 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('public/back_end/src/styles/custom.css') }}">
 
     <link rel="stylesheet" href="{{ asset('public/font_end/responsive/mobile.css') }}">
+    @include('client.css_custom')
 </head>
 <body class="login-page">
 	<div class="login-header box-shadow">
@@ -34,13 +35,12 @@
 			</div>
 			<div class="login-menu">
 				<ul>
-					<li><a href="register_client" style="color: #7faf51">Đăng ký</a></li>
+					<li><a href="register_client" class="cus_main_color">Đăng ký</a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
-	<div class="login-wrap d-flex align-items-center flex-wrap justify-content-center" style="
-	background-color: #7faf51;">
+	<div class="login-wrap d-flex align-items-center flex-wrap justify-content-center cus_main_bg">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-md-6 col-lg-7 laptop">
@@ -51,7 +51,7 @@
 				<div class="col-md-6 col-lg-5">
 					<div class="login-box bg-white box-shadow border-radius-10">
 						<div class="login-title">
-							<h2 class="text-center" style="color: #7faf51">Đăng nhập</h2>
+							<h2 class="text-center cus_main_color">Đăng nhập</h2>
 						</div>
 						@if($errors->any())
                             <div class="alert alert-danger alert-blog">{{ $errors->first() }}</div>
@@ -71,17 +71,6 @@
 									<span class="input-group-text"><i class="icon-copy dw dw-padlock"></i></i></span>
 								</div>
 							</div>
-							{{-- <div class="row pb-30">
-								<div class="col-6">
-									<div class="custom-control custom-checkbox">
-										<input type="checkbox" class="custom-control-input" id="customCheck1">
-										<label class="custom-control-label" for="customCheck1">Remember</label>
-									</div>
-								</div>
-								<div class="col-6">
-									<div class="forgot-password"><a href="forgot-password.html">Forgot Password</a></div>
-								</div>
-							</div> --}}
 							<div class="d-flex justify-content-between d-flex align-items-center mb-2" style="font-size: 14px">
 								<div class="justify-content-start"><a class="forget-pass" href="{{ URL::to('mail_reset_password') }}">Quên mật khẩu?</a></div>
 								<div class="justify-content-end"><a class="register" href="register_client">Đăng ký tài khoản mới?</a></div>
@@ -89,7 +78,7 @@
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="input-group mb-0 btn-login">
-										<input type="submit" class="btn btn-lg btn-block" style="background-color: #7faf51; color:white;" value="Đăng Nhập" />
+										<input type="submit" class="btn btn-lg btn-block cus_main_bg cus_main_text" value="Đăng Nhập" />
 									</div>
 									<div class="row">
 										<div class="col-5 horizontal-line"></div>

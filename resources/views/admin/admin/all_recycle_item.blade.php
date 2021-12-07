@@ -81,7 +81,7 @@
                                                         <img src="{{ asset('public/upload/' . $recy->avt) }}" alt="hình ảnh"
                                                             srcset="" style="height: 80px; width: 80px">
                                                         <div class="da-overlay">
-                                                            
+
                                                         </div>
                                                     </div>
                                                 </div>

@@ -54,7 +54,7 @@
                             </div>
                             <div class="laptop">
                                 <ul class="user-list-module">
-                                    <li class="user-module-item user-module-item--active">
+                                    <li class="user-module-item">
                                         <a href="{{ URL::to('user/account') }}" class="user-module-item--link">Hồ sơ</a>
                                     </li>
                                     <li class="user-module-item">
@@ -64,7 +64,7 @@
                                         <a href="{{ URL::to('user/resetpassword') }}" class="user-module-item--link">Đổi mật
                                             khẩu</a>
                                     </li>
-                                    <li class="user-module-item">
+                                    <li class="user-module-item user-module-item--active">
                                         <a href="{{ URL::to('user/order') }}" class="user-module-item--link">Đơn mua</a>
                                     </li>
                                     <li class="user-module-item">
@@ -147,7 +147,7 @@
                                                     @endforeach
                                                 </ul>
                                                 <footer class="content-item-footer">
-                                                    <span class="content-item-total">Tổng tiền:
+                                                    <span class="content-item-total cus_main_color">Tổng tiền:
                                                         {{ number_format($order->total_price, 0, '.', ',') }}₫</span>
                                                 </footer>
                                                 <footer class="content-btn-footer">

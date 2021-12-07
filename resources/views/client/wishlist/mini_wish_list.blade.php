@@ -50,7 +50,7 @@
 <div class="modal_delete_item_wishlist" style="display: none">
     <!-- Modal content -->
     <div class="modal_content_delete_item_wishlist">
-        <div class="modal-header-cus">
+        <div class="modal-header-cus border_top_3">
             <span class="close_delete_address close close_modal">&times;</span>
             <h4>Thông báo</h4>
         </div>
@@ -65,7 +65,7 @@
         </div>
         <div class="content_footer_modal_delete_item_wishlist">
             <button class="btn btn-secondary btn_cancel_modal_delete_item_cart" style="margin-right: 10px">TRỞ LẠI</button>
-            <button class="btn btn-success btn_confirm_delete_item_wish_list">XÓA</button>
+            <button class="btn btn-success btn_confirm_delete_item_wish_list cus_main_bg cus_main_text">XÓA</button>
         </div>
     </div>
 </div>

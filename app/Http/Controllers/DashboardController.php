@@ -227,7 +227,8 @@ class DashboardController extends Controller
             $obStatistical[] = $arrMege;
         }
         // dd($obStatistical);
-        $data = (new Collection($obStatistical))->paginate(5);
+        $obStatistical = collect($obStatistical)->sortBy('date')->reverse()->toArray();
+        $data = (new Collection($obStatistical))->paginate(10);
         return $data;
     }
     public function print_pdf_dashbpard_revenue_daily(Request $request){

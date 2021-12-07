@@ -90,7 +90,7 @@
         <div class="center"
             style="text-align: center; padding: 10px; background-color:#000000c2;
             font-size: 18px; color: white; width: 100%">
-            Bản Quyền Thuộc <a href="{{ URL::to('/') }}" style="color: rgb(93, 184, 93)">MKU FOOD</a>
+            Bản Quyền Thuộc <a href="{{ URL::to('/') }}" class="cus_main_color">MKU FOOD</a>
         </div>
     </div>
 </footer>

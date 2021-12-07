@@ -22,17 +22,18 @@
             outline: none;
         }
     </style>
+    @include('client.css_custom')
     @if (count($all_product_discount) > 0)
         {{-- laptop --}}
         <div class="product-tab z-index-20 bg">
             <div class="container">
                 <div class="biolife-tab biolife-tab-contain sm-margin-top-34px container-product laptop">
                     <div class="tab__head">
-                        <div class="tab__head-text--title">
+                        <div class="tab__head-text--title cus_main_color">
                             SẢN PHẨM KHUYẾN MÃI
                         </div>
                         <div class="tab__head-text--see-all">
-                            <a href="{{ URL::to('show_all_product_discount') }}" class="tab__head-link">
+                            <a href="{{ URL::to('show_all_product_discount') }}" class="tab__head-link cus_main_color">
                                 Xem tất cả <span class="icon-copy ti-angle-right"></span>
                             </a>
                         </div>
@@ -86,7 +87,7 @@
                                                     @if (Session::get('customer_id'))
                                                         <a class="btn wishlist-btn btn_add_wish_lish" style="cursor: pointer;" data-id="{{ $product->product_id }}">
                                                             @if ($check_already_wish->check_already == 1)
-                                                                <i class="fa fa-heart" aria-hidden="true" style="color: #7faf51"></i>
+                                                               <i class="fa fa-heart cus_main_color" aria-hidden="true"></i>
                                                             @else
                                                                 <i class="fa fa-heart icon_wish_list_{{ $product->product_id }}" aria-hidden="true"></i>
                                                             @endif
@@ -94,7 +95,7 @@
                                                     @else
                                                         <a href="{{ URL::to('login_client') }}" class="btn wishlist-btn">
                                                             @if ($check_already_wish->check_already == 1)
-                                                                <i class="fa fa-heart" aria-hidden="true" style="color: #7faf51"></i>
+                                                                <i class="fa fa-heart cus_main_color" aria-hidden="true"></i>
                                                             @else
                                                                 <i class="fa fa-heart" aria-hidden="true"></i>
                                                             @endif
@@ -102,12 +103,12 @@
                                                     @endif
                                                     {{-- end wish list --}}
                                                     @if (Session::get('customer_id'))
-                                                        <button href="#" class="btn add-to-cart-btn btn-block btn-sm add_cart_one" data-id="{{ $product->product_id }}" style="width: 175px;">
+                                                        <button href="#" class="btn add-to-cart-btn btn-block btn-sm add_cart_one cus_main_bg cus_main_text" data-id="{{ $product->product_id }}" style="width: 175px;">
                                                             <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
                                                             thêm vào giỏ hàng
                                                         </button>
                                                     @else
-                                                        <a href="{{ URL::to('login_client') }}" class="btn add-to-cart-btn btn-block btn-sm" style="width: 175px;">
+                                                        <a href="{{ URL::to('login_client') }}" class="btn add-to-cart-btn btn-block btn-sm cus_main_bg cus_main_text" style="width: 175px;">
                                                             <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
                                                             thêm vào giỏ hàng
                                                         </a>
@@ -155,7 +156,7 @@
     <div class="modal_mini_detail modal">
         <!-- Modal content -->
         <div class="modal-content container">
-            <div class="modal-header-mini_prod">
+            <div class="modal-header-mini_prod border_top_3">
                 <span class="close close_modal">&times;</span>
             </div>
             <div class="modal_body_mini_prod content_mini_detail">
@@ -205,17 +206,18 @@
             </ul>
         </div>
     </div>
+
     {{-- PRODUCT FEATURE --}}
     @if (count($all_product_feature) > 0)
         <div class="product-tab z-index-20 bg laptop">
             <div class="container">
                 <div class="biolife-tab biolife-tab-contain sm-margin-top-34px container-product">
                     <div class="tab__head">
-                        <div class="tab__head-text--title">
+                        <div class="tab__head-text--title cus_main_color">
                             SẢN PHẨM ĐẶC TRƯNG
                         </div>
                         <div class="tab__head-text--see-all">
-                            <a href="{{ URL::to('show_all_product_feature') }}" class="tab__head-link">
+                            <a href="{{ URL::to('show_all_product_feature') }}" class="tab__head-link cus_main_color">
                                 Xem tất cả <span class="icon-copy ti-angle-right"></span>
                             </a>
                         </div>
@@ -269,7 +271,7 @@
                                                     @if (Session::get('customer_id'))
                                                         <a class="btn wishlist-btn btn_add_wish_lish" style="cursor: pointer;" data-id="{{ $product->product_id }}">
                                                             @if ($check_already_wish->check_already == 1)
-                                                                <i class="fa fa-heart" aria-hidden="true" style="color: #7faf51"></i>
+                                                                <i class="fa fa-heart cus_main_color" aria-hidden="true"></i>
                                                             @else
                                                                 <i class="fa fa-heart icon_wish_list_{{ $product->product_id }}" aria-hidden="true"></i>
                                                             @endif
@@ -277,7 +279,7 @@
                                                     @else
                                                         <a href="{{ URL::to('login_client') }}" class="btn wishlist-btn">
                                                             @if ($check_already_wish->check_already == 1)
-                                                                <i class="fa fa-heart" aria-hidden="true" style="color: #7faf51"></i>
+                                                                <i class="fa fa-heart cus_main_color" aria-hidden="true"></i>
                                                             @else
                                                                 <i class="fa fa-heart" aria-hidden="true"></i>
                                                             @endif
@@ -285,12 +287,12 @@
                                                     @endif
                                                     {{-- end wishlist --}}
                                                     @if (Session::get('customer_id'))
-                                                        <button href="#" class="btn add-to-cart-btn btn-block btn-sm add_cart_one" data-id="{{ $product->product_id }}" style="width: 175px;">
+                                                        <button href="#" class="btn add-to-cart-btn btn-block btn-sm add_cart_one cus_main_bg cus_main_text" data-id="{{ $product->product_id }}" style="width: 175px;">
                                                             <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
                                                             thêm vào giỏ hàng
                                                         </button>
                                                     @else
-                                                        <a href="{{ URL::to('login_client') }}" class="btn add-to-cart-btn btn-block btn-sm" style="width: 175px;">
+                                                        <a href="{{ URL::to('login_client') }}" class="btn add-to-cart-btn btn-block btn-sm cus_main_bg cus_main_text" style="width: 175px;">
                                                             <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
                                                             thêm vào giỏ hàng
                                                         </a>
@@ -361,11 +363,11 @@
         <div class="row">
             <div id="main-content" class="main-content col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="block-item head__title" style="display: flex; justify-content: space-between">
-                    <div class="head__title--text">
+                    <div class="head__title--text border_bottom_4 cus_main_color">
                         Gợi ý hôm nay
                     </div>
                     <div class="tab__head-text--see-all" style="padding-right: 10px">
-                        <a href="{{ URL::to('show_all_product_recommend') }}" class="tab__head-link">
+                        <a href="{{ URL::to('show_all_product_recommend') }}" class="tab__head-link cus_main_color">
                             Xem tất cả <span class="icon-copy ti-angle-right"></span>
                         </a>
                     </div>
@@ -417,8 +419,6 @@
                                             @endif
                                         </div>
                                         <div class="content_qty_rating">
-                                            {{-- <p class="shipping-day">3-Day Shipping</p>
-                                            <p class="for-today">Pree Pickup Today</p> --}}
                                             <div class="rating" style="display: flex;">
                                                 <p class="star-rating" style="align-self: flex-start">
                                                     <span class="width-80percent" style="width:{{ $info_rating_saled->avg_rating * 20 }}%"></span>
@@ -432,7 +432,7 @@
                                                 @if (Session::get('customer_id'))
                                                     <a class="btn wishlist-btn btn_add_wish_lish" style="cursor: pointer;" data-id="{{ $product->product_id }}">
                                                         @if ($check_already_wish->check_already == 1)
-                                                            <i class="fa fa-heart" aria-hidden="true" style="color: #7faf51"></i>
+                                                            <i class="fa fa-heart cus_main_color" aria-hidden="true"></i>
                                                         @else
                                                             <i class="fa fa-heart icon_wish_list_{{ $product->product_id }}" aria-hidden="true"></i>
                                                         @endif
@@ -440,7 +440,7 @@
                                                 @else
                                                     <a href="{{ URL::to('login_client') }}" class="btn wishlist-btn">
                                                         @if ($check_already_wish->check_already == 1)
-                                                            <i class="fa fa-heart" aria-hidden="true" style="color: #7faf51"></i>
+                                                            <i class="fa fa-heart cus_main_color" aria-hidden="true"></i>
                                                         @else
                                                             <i class="fa fa-heart" aria-hidden="true"></i>
                                                         @endif
@@ -448,11 +448,11 @@
                                                 @endif
                                                 {{-- end wish list --}}
                                                 @if (Session::get('customer_id'))
-                                                    <button href="#" class="btn add-to-cart-btn btn-block btn-sm add_cart_one" data-id="{{ $product->product_id }}" style="font-size: 12px;"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                                                    <button href="#" class="btn add-to-cart-btn btn-block btn-sm add_cart_one cus_main_bg cus_main_text" data-id="{{ $product->product_id }}" style="font-size: 12px;"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
                                                         thêm vào giỏ hàng
                                                     </button>
                                                 @else
-                                                    <a href="{{ URL::to('login_client') }}" class="btn add-to-cart-btn btn-block btn-sm" style="font-size: 12px;"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                                                    <a href="{{ URL::to('login_client') }}" class="btn add-to-cart-btn btn-block btn-sm cus_main_bg cus_main_text" style="font-size: 12px;"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
                                                         thêm vào giỏ hàng
                                                     </a>
                                                 @endif

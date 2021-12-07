@@ -131,7 +131,7 @@
                             <span class="mtext">Duyệt Bình Luận</span>
                         </a>
                         <ul class="submenu">
-                            <li><a href="{{ URL::to('admin/view_comment_to_process') }}">Bình luận chờ duyệt</a></li>
+                            <li><a href="{{ URL::to('admin/view_comment_to_process') }}">Bình Luận Chờ Duyệt</a></li>
                         </ul>
                     </li>
                 @endhasrole
@@ -180,7 +180,7 @@
                 {{-- FONT-END --}}
                 @hasrole(['admin'])
                     <li>
-                        <div class="sidebar-small-cap">Giao Diện</div>
+                        <div class="sidebar-small-cap">Tùy Chỉnh Giao Diện</div>
                     </li>
                     {{-- SLIDER --}}
                     <li class="dropdown">
@@ -189,8 +189,19 @@
                             <span class="mtext">Slider</span>
                         </a>
                         <ul class="submenu">
-                            <li><a href="{{ URL::to('admin/all_slider') }}">Danh sách slider</a></li>
-                            <li><a href="{{ URL::to('admin/add_slider') }}">Thêm slider</a></li>
+                            <li><a href="{{ URL::to('admin/all_slider') }}">Danh Sách Slider</a></li>
+                            <li><a href="{{ URL::to('admin/add_slider') }}">Thêm Slider</a></li>
+                        </ul>
+                    </li>
+                    {{-- Layout --}}
+                    <li class="dropdown">
+                        <a href="javascript:;" class="dropdown-toggle">
+                            <span class="micon dw dw-paint-brush"></span>
+                            <span class="mtext">Giao Diện</span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="{{ URL::to('admin/all_layout') }}">Danh Sách Giao Diện</a></li>
+                            <li><a href="{{ URL::to('admin/add_layout') }}">Thêm Giao Diện</a></li>
                         </ul>
                     </li>
                 @endhasrole

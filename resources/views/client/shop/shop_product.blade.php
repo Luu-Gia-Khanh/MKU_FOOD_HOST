@@ -45,7 +45,6 @@
     }
     #loadMore {
         display: none;
-        color:#7faf51;
         cursor:pointer;
         font-size: 16px;
         font-style: italic;
@@ -58,7 +57,6 @@
     }
     #loadLess {
         display: none;
-        color:#7faf51;
         cursor:pointer;
         font-size: 16px;
         font-style: italic;
@@ -133,7 +131,7 @@
                                         <div class="flt-item to-right">
                                             <div class="">
                                                 <div class="">
-                                                    <button class="btn btn_open_modal_filter" style="background: #7faf51; cursor: pointer;"><i class="fa fa-filter" style="color: white; font-size: 24px"></i></button>
+                                                    <button class="btn btn_open_modal_filter cus_main_bg cus_main_text" style="cursor: pointer;"><i class="fa fa-filter" style="color: white; font-size: 24px"></i></button>
                                                 </div>
                                             </div>
                                         </div>
@@ -153,11 +151,12 @@
                                                 <div class="row">
                                                     <div class="content_bg_item_sm_shop">
                                                         <div class="content_tab_header">
-                                                            <div class="title_tab_header">
+                                                            <div class="title_tab_header cus_main_color">
                                                                 SẢN PHẨM KHUYẾN MÃI
                                                             </div>
                                                             <div class="see_more_tab_header">
-                                                                <a href="{{ URL::to('show_all_product_discount') }}" class="tab__head-link">
+                                                                <a href="{{ URL::to('show_all_product_discount') }}"
+                                                                    class="tab__head-link cus_main_color" style="font-size: 16px">
                                                                     Xem tất cả <span class="icon-copy ti-angle-right"></span>
                                                                 </a>
                                                             </div>
@@ -220,7 +219,7 @@
                                                                                                     <a class="btn wishlist-btn btn_add_wish_lish" style="cursor: pointer;"
                                                                                                         data-id="{{ $product->product_id }}">
                                                                                                         @if ($check_already_wish->check_already == 1)
-                                                                                                            <i class="fa fa-heart" aria-hidden="true" style="color: #7faf51"></i>
+                                                                                                            <i class="fa fa-heart cus_main_color" aria-hidden="true"></i>
                                                                                                         @else
                                                                                                             <i class="fa fa-heart icon_wish_list_{{ $product->product_id }}" aria-hidden="true"></i>
                                                                                                         @endif
@@ -228,7 +227,7 @@
                                                                                                 @else
                                                                                                     <a href="{{ URL::to('login_client') }}"class="btn wishlist-btn" >
                                                                                                         @if ($check_already_wish->check_already == 1)
-                                                                                                            <i class="fa fa-heart" aria-hidden="true" style="color: #7faf51"></i>
+                                                                                                            <i class="fa fa-heart cus_main_color" aria-hidden="true"></i>
                                                                                                         @else
                                                                                                             <i class="fa fa-heart" aria-hidden="true"></i>
                                                                                                         @endif
@@ -237,15 +236,16 @@
                                                                                                 {{-- end wish list --}}
                                                                                                 @if (Session::get('customer_id'))
                                                                                                     <button href="#"
-                                                                                                        class="btn add-to-cart-btn btn-block btn-sm add_cart_one"
+                                                                                                        class="btn add-to-cart-btn btn-block btn-sm add_cart_one cus_main_bg cus_main_text"
                                                                                                         data-id="{{ $product->product_id }}" style="font-size: 10px;"><i
                                                                                                             class="fa fa-cart-arrow-down" aria-hidden="true" ></i>
                                                                                                             thêm vào giỏ hàng
                                                                                                         </button>
                                                                                                 @else
                                                                                                     <a href="{{ URL::to('login_client') }}"
-                                                                                                        class="btn add-to-cart-btn btn-block btn-sm" style="font-size: 10px;"><i
-                                                                                                            class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                                                                                                        class="btn add-to-cart-btn btn-block btn-sm cus_main_bg cus_main_text"
+                                                                                                        style="font-size: 10px;">
+                                                                                                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
                                                                                                             thêm vào giỏ hàng
                                                                                                         </a>
                                                                                                 @endif
@@ -291,13 +291,8 @@
                                                 <div class="row">
                                                     <div class="content_bg_item_sm_shop">
                                                         <div class="content_tab_header" style="margin-bottom: 0px">
-                                                            <div class="title_tab_header">
+                                                            <div class="title_tab_header cus_main_color">
                                                                 GỢI Ý HÔM NAY
-                                                            </div>
-                                                            <div class="see_more_tab_header">
-                                                                {{-- <a href="{{ URL::to('show_all_product_feature') }}" class="tab__head-link">
-                                                                    Xem tất cả <span class="icon-copy ti-angle-right"></span>
-                                                                </a> --}}
                                                             </div>
                                                         </div>
                                                         <ul class="products-list" style="list-style-type: none;">
@@ -349,7 +344,7 @@
                                                                                         <a class="btn wishlist-btn btn_add_wish_lish" style="cursor: pointer;"
                                                                                             data-id="{{ $product->product_id }}">
                                                                                             @if ($check_already_wish->check_already == 1)
-                                                                                                <i class="fa fa-heart" aria-hidden="true" style="color: #7faf51"></i>
+                                                                                                <i class="fa fa-heart cus_main_color" aria-hidden="true"></i>
                                                                                             @else
                                                                                                 <i class="fa fa-heart icon_wish_list_{{ $product->product_id }}" aria-hidden="true"></i>
                                                                                             @endif
@@ -357,7 +352,7 @@
                                                                                     @else
                                                                                         <a href="{{ URL::to('login_client') }}"class="btn wishlist-btn" >
                                                                                             @if ($check_already_wish->check_already == 1)
-                                                                                                <i class="fa fa-heart" aria-hidden="true" style="color: #7faf51"></i>
+                                                                                                <i class="fa fa-heart cus_main_color" aria-hidden="true"></i>
                                                                                             @else
                                                                                                 <i class="fa fa-heart" aria-hidden="true"></i>
                                                                                             @endif
@@ -366,14 +361,14 @@
                                                                                     {{-- end wish list --}}
                                                                                     @if (Session::get('customer_id'))
                                                                                         <button href="#"
-                                                                                            class="btn add-to-cart-btn btn-block btn-sm add_cart_one"
+                                                                                            class="btn add-to-cart-btn btn-block btn-sm add_cart_one cus_main_bg cus_main_text"
                                                                                             data-id="{{ $product->product_id }}"><i
                                                                                                 class="fa fa-cart-arrow-down" aria-hidden="true"></i>
                                                                                                 thêm vào giỏ hàng
                                                                                             </button>
                                                                                     @else
                                                                                         <a href="{{ URL::to('login_client') }}"
-                                                                                            class="btn add-to-cart-btn btn-block btn-sm"><i
+                                                                                            class="btn add-to-cart-btn btn-block btn-sm cus_main_bg cus_main_text"><i
                                                                                                 class="fa fa-cart-arrow-down" aria-hidden="true"></i>
                                                                                                 thêm vào giỏ hàng
                                                                                             </a>
@@ -422,6 +417,7 @@
                                     <a class="biolife-close-btn" href="#" data-object="open-mobile-filter">&times;</a>
                                 </div>
                                 <div class="sidebar-contain">
+                                    {{-- flo cate --}}
                                     <div class="widget biolife-filter content_left_side_custom">
                                         <h4 class="wgt-title">Theo Danh mục</h4>
                                         <div class="wgt-content">
@@ -434,6 +430,7 @@
                                             </ul>
                                         </div>
                                     </div>
+                                    {{-- flo price --}}
                                     <div class="widget price-filter biolife-filter content_left_side_custom">
                                         <h4 class="wgt-title">Khoảng Giá</h4>
                                         <div class="wgt-content">
@@ -448,7 +445,13 @@
                                                             <input class="input-number val_price_sort_end" type="number" id="pr-to" value="" name="price-from" placeholder="₫ Đến">
                                                         </p>
                                                     </div>
-                                                    <p class="f-item"><button type="button" class="btn-submit btn_filter_price btn_sort_price_ajax_shop" type="submit" style="border-radius: 5px">ÁP DỤNG</button></p>
+                                                    <p class="f-item">
+                                                        <button type="button" class="btn-submit btn_filter_price btn_sort_price_ajax_shop cus_main_bg cus_main_text"
+                                                            type="submit"
+                                                            style="border-radius: 5px; height: 35px; line-height: 20px">
+                                                            ÁP DỤNG
+                                                        </button>
+                                                    </p>
                                                 </form>
                                             </div>
                                             <ul class="check-list bold single">
@@ -547,7 +550,7 @@
     <div class="modal_mini_detail modal">
         <!-- Modal content -->
         <div class="modal-content">
-            <div class="modal-header-mini_prod">
+            <div class="modal-header-mini_prod border_top_3">
                 <span class="close close_modal">&times;</span>
             </div>
             <div class="modal_body_mini_prod content_mini_detail">
@@ -560,7 +563,7 @@
     <div id="modal_filter" class="modal modal_filter">
         <!-- Modal content -->
         <div class="modal-content-filter">
-            <div class="modal-header-cus">
+            <div class="modal-header-cus border_top_3">
                 <span class="close close_modal_filter">&times;</span>
                 <h4>
                     <i class="fa fa-filter" style="color: black; font-size: 24px">
@@ -608,7 +611,7 @@
             </div>
             <div class="content-modal-footer-address modal-footer modal_footer_filter_product">
                 <button class="btn btn-secondary btn_back_modal" style="margin-right: 10px">TRỞ LẠI</button>
-                <button class="btn btn-success btn_filter_modal_shop_many_feature">HOÀN THÀNH</button>
+                <button class="btn btn-success btn_filter_modal_shop_many_feature cus_main_bg cus_main_text">HOÀN THÀNH</button>
             </div>
         </div>
     </div>

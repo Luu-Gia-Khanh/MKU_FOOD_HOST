@@ -21,7 +21,7 @@ class PermissionAdmin_Manager_Employee
             }
             else{
                 $request->session()->flash('no_permission', 'Bạn không có quyền truy cập trang này');
-                return redirect('admin/');
+                return redirect('login/');
             }
         }
         else{

@@ -20,6 +20,7 @@ class ProductPriceController extends Controller
             ['product'=>$product, 'history_price'=>$history_price]);
     }
     public function update_price_product(Request $request){
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         $request-> validate([
             'price' =>'required|numeric|min:1000|max:10000000'
         ],[

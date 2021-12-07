@@ -79,7 +79,9 @@
                                             @elseif($time->status_id == 2 && $time->status == 1)
                                                 <button type="button" class="btn btn-success btn-sm btn_confirm_delivery_order_mini" style="font-size: 12px" data-toggle="modal" data-target="#modal_confirm_delivery_order_mini" data-id="{{ $order->order_code }}"><i class="icon-copy dw dw-truck"></i>... Giao Hàng</button>
                                             @elseif($time->status_id == 3 && $time->status == 1)
+                                                @hasrole('delivery')
                                                 <button type="button" class="btn btn-success btn-sm btn_confirm_delivery_order_success_mini" style="font-size: 12px" data-toggle="modal" data-target="#modal_confirm_delivery_order_success_mini" data-id="{{ $order->order_code }}"><i class="icon-copy dw dw-delivery-truck-1"></i>Giao Thành Công</button>
+                                                @endhasrole
                                             @endif
                                         </li>
                                     @endforeach

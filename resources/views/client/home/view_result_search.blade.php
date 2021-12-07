@@ -56,7 +56,7 @@
         <div class="content_txt_result_search">
             <div class="txt_result">
                 <img src="{{ URL::to('public/upload/light_icon.png') }}" alt="" width="30px">
-                Kết quả tìm kiếm cho từ khóa '<span style="color: #7faf51">{{ $val_search }}</span>'
+                Kết quả tìm kiếm cho từ khóa '<span class="cus_main_color">{{ $val_search }}</span>'
             </div>
         </div>
         <div class="content_product_search">
@@ -170,7 +170,7 @@
                                                                     <a class="btn wishlist-btn btn_add_wish_lish" style="cursor: pointer;"
                                                                         data-id="{{ $product->product_id }}">
                                                                         @if ($check_already_wish->check_already == 1)
-                                                                            <i class="fa fa-heart" aria-hidden="true" style="color: #7faf51"></i>
+                                                                            <i class="fa fa-heart cus_main_color" aria-hidden="true" ></i>
                                                                         @else
                                                                             <i class="fa fa-heart icon_wish_list_{{ $product->product_id }}" aria-hidden="true"></i>
                                                                         @endif
@@ -178,7 +178,7 @@
                                                                 @else
                                                                     <a href="{{ URL::to('login_client') }}"class="btn wishlist-btn" >
                                                                         @if ($check_already_wish->check_already == 1)
-                                                                            <i class="fa fa-heart" aria-hidden="true" style="color: #7faf51"></i>
+                                                                            <i class="fa fa-heart cus_main_color" aria-hidden="true" ></i>
                                                                         @else
                                                                             <i class="fa fa-heart" aria-hidden="true"></i>
                                                                         @endif
@@ -187,14 +187,14 @@
                                                                 {{-- end wishlist --}}
                                                                 @if (Session::get('customer_id'))
                                                                     <button href="#"
-                                                                        class="btn add-to-cart-btn btn-block btn-sm add_cart_one"
+                                                                        class="btn add-to-cart-btn btn-block btn-sm add_cart_one cus_main_bg cus_main_text"
                                                                         data-id="{{ $product->product_id }}"><i
                                                                             class="fa fa-cart-arrow-down" aria-hidden="true"></i>
                                                                             thêm vào giỏ hàng
                                                                         </button>
                                                                 @else
                                                                     <a href="{{ URL::to('login_client') }}"
-                                                                        class="btn add-to-cart-btn btn-block btn-sm"><i
+                                                                        class="btn add-to-cart-btn btn-block btn-sm cus_main_bg cus_main_text"><i
                                                                             class="fa fa-cart-arrow-down" aria-hidden="true"></i>
                                                                             thêm vào giỏ hàng
                                                                         </a>
@@ -264,7 +264,9 @@
                                                         <input class="input-number val_price_filter_end" type="number" id="pr-to" value="" name="price-from" placeholder="₫ Đến">
                                                     </p>
                                                 </div>
-                                                <p class="f-item"><button type="button" class="btn-submit btn_filter_price" type="submit" style="border-radius: 5px">ÁP DỤNG</button></p>
+                                                <p class="f-item">
+                                                    <button type="button" class="btn-submit btn_filter_price cus_main_bg cus_main_text" type="submit" style="border-radius: 5px">ÁP DỤNG</button>
+                                                </p>
                                             </form>
                                         </div>
                                         <ul class="check-list bold single">
@@ -373,7 +375,7 @@
 <div class="modal_mini_detail modal">
     <!-- Modal content -->
     <div class="modal-content container">
-        <div class="modal-header-mini_prod">
+        <div class="modal-header-mini_prod border_top_3">
             <span class="close close_modal">&times;</span>
         </div>
         <div class="modal_body_mini_prod content_mini_detail">

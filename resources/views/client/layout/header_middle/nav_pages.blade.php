@@ -3,15 +3,17 @@
     <div class="col-lg-8 col-md-8 col-md-6 col-xs-6" style="position: relative">
         <div class="primary-menu">
             <ul class="menu biolife-menu clone-main-menu clone-primary-menu" id="primary-menu" data-menuname="main menu">
-                <li class="menu-item"><a href="{{ URL::to('/') }}">Trang chủ</a></li>
                 <li class="menu-item">
-                    <a href="{{ URL::to('shop_product') }}" class="menu-name" data-title="Shop" >Cửa hàng</a>
+                    <a href="{{ URL::to('/') }}" class="cus_top_text">Trang chủ</a>
                 </li>
                 <li class="menu-item">
-                    <a href="{{ URL::to('contact_us') }}" class="menu-name" data-title="Shop" >Liên hệ</a>
+                    <a href="{{ URL::to('shop_product') }}" class="menu-name cus_top_text" data-title="Shop" >Cửa hàng</a>
                 </li>
                 <li class="menu-item">
-                    <a href="{{ URL::to('terms_conditions') }}" class="menu-name" data-title="Shop" >Chính sách và điều khoản</a>
+                    <a href="{{ URL::to('contact_us') }}" class="menu-name cus_top_text" data-title="Shop" >Liên hệ</a>
+                </li>
+                <li class="menu-item">
+                    <a href="{{ URL::to('terms_conditions') }}" class="menu-name cus_top_text" data-title="Shop" >Chính sách và điều khoản</a>
                 </li>
 
             </ul>
