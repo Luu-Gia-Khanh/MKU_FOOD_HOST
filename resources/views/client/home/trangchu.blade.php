@@ -486,6 +486,22 @@
     @include('client.layout.responsive_mobile.product_recomment')
 
     <script src="{{ asset('public/font_end/custom_ui/js/recently_viewed.js') }}"></script>
+
+    {{-- image-near-footer  --}}
+    <div class="content-imgae-near-footer" style="padding-bottom: 100px; ">
+        <div class="image-near-footer"
+            style="height: 400px; width: 100%; background: rgb(255, 255, 255); display: flex;"
+        >
+            <img src="{{ asset('public/upload/image-near-footer.jpg') }}" alt="" style="height: 390px; margin-left: 115px">
+            <div class="content-text-near-footer" style="padding: 80px">
+                <h3 style="font-size: 40px">MKU FOOD</h3>
+                <div class="" style="font-size: 24px; padding-top: 20px">
+                    "Chất lượng tạo nên thương hiệu"
+                </div>
+            </div>
+        </div>
+    </div>
+
 @endsection
 @section('top_rate_product_view_client')
     @include('client.layout.body.top_rate_product')

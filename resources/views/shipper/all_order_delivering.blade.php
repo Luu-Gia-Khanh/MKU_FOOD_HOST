@@ -99,8 +99,15 @@
                                         @endforeach
                                     </td>
                                     <td style="min-width: 163px;" class="text-center">
-                                        <button type="button" class="btn btn-success btn_confirm_order" data-toggle="modal" data-target="#modal_confirm_delivered"
-                                            data-id="{{ $order->order_code }}"></i>Xác Nhận</button>
+                                        <button type="button" class="btn btn-success btn_confirm_order" style="width: 140px; padding: 10px"
+                                            data-toggle="modal" data-target="#modal_confirm_delivered"
+                                            data-id="{{ $order->order_code }}"></i>Giao Thành Công</button>
+                                        <button class="btn btn-danger btn_cancel_order_delivery"
+                                            data-toggle="modal" data-target="#modal_cancel_delivered"
+                                            data-id="{{ $order->order_code }}"
+                                            style="width: 140px; margin-top: 5px; padding: 10px">
+                                            Giao Thất Bại
+                                        </button>
                                     </td>
                                 </tr>
                             @endforeach
@@ -126,6 +133,12 @@
                     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
                 });
             });
+
+            // cancel order
+            $('.btn_cancel_order_delivery').click(function() {
+                order_code = $(this).attr('data-id');
+                $('.val_order_code_cancel').val(order_code);
+            })
         });
     </script>
 </body>

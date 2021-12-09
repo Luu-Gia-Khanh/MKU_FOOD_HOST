@@ -16,6 +16,7 @@ Route::post('/process_login_shipper', 'ShipperController@process_login');
 Route::get('/delivering', 'ShipperController@all_order_delivering')->middleware('delivery');
 Route::get('/order_detail/{order_id}', 'ShipperController@order_detail')->middleware('delivery');
 Route::post('/shipper/confirm_delivery_order_success', 'ShipperController@confirm_delivery_order_success');
+Route::post('/shipper/confirm_delivery_order_cancel', 'ShipperController@confirm_delivery_order_cancel');
 Route::get('/logout_shipper', 'ShipperController@logout_shipper');
 
 // LOGIN SOCIAL

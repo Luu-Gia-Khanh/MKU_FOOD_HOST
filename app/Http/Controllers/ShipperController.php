@@ -85,6 +85,41 @@ class ShipperController extends Controller
             return redirect('/delivering');
         }
     }
+    public function confirm_delivery_order_cancel(Request $request){
+        $order_code = $request->order_code;
+        $order = Orders::where('order_code', $order_code)->first();
+        $detail_status_id = Order_Detail_Status::where('status',1)->where('status_id',3)->where('order_id',$order->order_id)->first();
+
+        $update_order_detail_status = Order_Detail_Status::where('detail_status_id',$detail_status_id->detail_status_id)->first();
+        $update_order_detail_status->status = 0;
+        $result_update = $update_order_detail_status->save();
+
+        if($result_update){
+            $add_order_detail_status = new Order_Detail_Status();
+            $add_order_detail_status->order_id = $order->order_id;
+            $add_order_detail_status->status_id = 5;
+            $add_order_detail_status->time_status = Carbon::now('Asia/Ho_Chi_Minh');
+            $add_order_detail_status->status = 1;
+            $add_order_detail_status->save();
+
+            $update_status_payment_order = Orders::find($order->order_id);
+            $update_status_payment_order -> status_pay = 0;
+            $update_status_payment_order -> save();
+
+            //
+            $action_order = new Admin_Action_Order();
+            $action_order->admin_id = Session::get('admin_id');
+            $action_order->order_id = $order->order_id;
+            $action_order->action_id = 6;
+            $action_order->action_time = Carbon::now('Asia/Ho_Chi_Minh');
+            $action_order->action_message = 'Hủy đơn hàng thành công';
+            $action_order->save();
+
+            $string_message = 'Đã xác nhận hủy đơn hàng thành công #'.$order_code;
+            $request->session()->flash('confirm_delivery_order_success', $string_message);
+            return redirect('/delivering');
+        }
+    }
     public function process_login(Request $request){
         $admin_login = Admin::where('admin_email',$request->email)->where('password', md5($request->password))->first();
         if($admin_login){

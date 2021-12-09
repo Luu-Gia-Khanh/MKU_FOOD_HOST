@@ -56,8 +56,22 @@
                     <a href="{{ URL::to('delivering') }}">
                         <button class="btn btn-secondary">Trở về</button>
                     </a>
-                    <button type="button" class="btn btn-success ml-5 btn_confirm_order" data-toggle="modal" data-target="#modal_confirm_delivered" data-id="{{ $order->order_code }}"></i>Duyệt Đơn
-                        Hàng</button>
+                    <div class="conent-btn d-flex justify-content-between">
+                        <button type="button" class="btn btn-success ml-5 btn_confirm_order"
+                            data-toggle="modal" data-target="#modal_confirm_delivered"
+                            data-id="{{ $order->order_code }}"
+                            style="margin-right: 5px"
+                        >
+                            Duyệt ĐơnHàng
+                        </button>
+                        <button class="btn btn-danger btn_cancel_order_delivery"
+                        data-toggle="modal" data-target="#modal_cancel_delivered"
+                        data-id="{{ $order->order_code }}"
+                        >
+                        Giao Thất Bại
+                    </button>
+                    </div>
+
                 </div>
                 <div class="d-flex justify-content-between">
                     <span><strong>Mã Đơn Hàng: </strong><span class="text-primary">{{ $order->order_code }}</span></span>
@@ -167,6 +181,9 @@
         </div>
     </div>
     @include('shipper.modal_confirm_order')
+    <script src="{{ asset('public/font_end/assets/js/jquery-3.4.1.min.js') }}"></script>
+    <script src="{{ asset('public/font_end/assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('public/back_end/custom_shipper/confirm_order.js') }}"></script>
     <script>
         $(document).ready(function() {
             $("#myInput").on("keyup", function() {
@@ -175,11 +192,13 @@
                     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
                 });
             });
+            // cancel order
+            $('.btn_cancel_order_delivery').click(function() {
+                order_code = $(this).attr('data-id');
+                $('.val_order_code_cancel').val(order_code);
+            })
         });
     </script>
-    <script src="{{ asset('public/font_end/assets/js/jquery-3.4.1.min.js') }}"></script>
-    <script src="{{ asset('public/font_end/assets/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('public/back_end/custom_shipper/confirm_order.js') }}"></script>
 </body>
 
 </html>

@@ -1,1 +1,3 @@
 - revenu every day dashboard -> (input date start and date end): check change
+- cancel order -> delivery
+- date -> admin, customer, order, comment

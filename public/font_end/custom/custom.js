@@ -203,6 +203,16 @@ $(document).ready(function(){
                 timer: 1500
               });
         }
+        else if(Math.floor(qty) != qty && !$.isNumeric(qty)) {
+            $('.val_qty_'+product_id).val(1);
+            Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: 'Thêm vào giỏ hàng thất bại, số lượng không hợp lệ',
+                showConfirmButton: false,
+                timer: 1500
+              });
+        }
         else{
             $.ajax({
                 url: '../add_to_cart',

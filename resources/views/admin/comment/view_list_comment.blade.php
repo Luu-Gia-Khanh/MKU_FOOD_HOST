@@ -111,6 +111,8 @@
                                                 colspan="1">Đánh Giá</th>
                                             <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                                                 colspan="1" data-defaultsign="AZ">Bình Luận</th>
+                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                                                colspan="1">Thời Gian Bình Luận</th>
                                             <th class="datatable-nosort sorting_disabled text-center" rowspan="1" colspan="1"
                                                 aria-label="Action" data-defaultsort="disabled">Thao Tác</th>
                                         </tr>
@@ -152,6 +154,9 @@
                                                         </td>
                                                         <td>
                                                             {{ $comment->comment_message }}
+                                                        </td>
+                                                        <td>
+                                                            {{ date("d/m/Y H:i a", strtotime($comment->created_at)) }}
                                                         </td>
                                                         <td class="text-center">
                                                             <a href="#" class="btn_open_modal_unaccep_comment" data-id='{{ $comment->comment_id }}' data-toggle="modal" data-target="#Modal_upaccep_comment">

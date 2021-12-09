@@ -153,7 +153,7 @@
                                                 <footer class="content-btn-footer">
                                                     @foreach ($all_order_detail_status as $status_order_detail)
                                                         @if ($status_order_detail->order_id == $order->order_id)
-                                                            @if (($status_order_detail->status_id == 1 && $status_order_detail->status == 1) || ($status_order_detail->status_id == 2 && $status_order_detail->status == 1))
+                                                            @if (($status_order_detail->status_id == 1 && $status_order_detail->status == 1))
                                                                 <a href="{{ URL::to('user/order/' . $order->order_id) }}" class="item-btn-footer-primary">Xem chi tiết đơn
                                                                     hàng</a>
                                                                 <button class="item-btn-footer delete_order get_order_id btn_open_order_cancel" data-id={{ $order->order_id }}>Hủy đơn hàng</button>
@@ -334,7 +334,7 @@
                                                         </footer>
                                                         <footer class="content-btn-footer">
                                                             <a href="{{ URL::to('user/order/' . $order->order_id) }}" class="item-btn-footer-primary">Xem chi tiết đơn hàng</a>
-                                                            <button class="item-btn-footer delete_order get_order_id btn_open_order_cancel" data-id={{ $order->order_id }}>Hủy đơn hàng</button>
+                                                            {{-- <button class="item-btn-footer delete_order get_order_id btn_open_order_cancel" data-id={{ $order->order_id }}>Hủy đơn hàng</button> --}}
                                                         </footer>
                                                     </div>
                                                 @endif

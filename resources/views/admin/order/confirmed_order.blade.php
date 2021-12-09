@@ -75,7 +75,7 @@
                                                 <td class="text-center">
                                                     <a href="{{ URL::to('admin/detail_order_item/'.$order->order_id) }}"><b>{{ $order->order_code }}</b></a>
                                                 </td>
-                                                <td class="">{{ number_format($order->total_price, 0, ',', '.') }} vnđ</td>
+                                                <td class="">{{ number_format($order->total_price, 0, ',', '.') }}₫</td>
                                                 <td class="">
                                                     @foreach ($payment_method as $method_pay)
                                                         @if ($order->payment_id == $method_pay->payment_id)

@@ -21,6 +21,11 @@
                                     <p>
                                         Có đơn hàng đang chờ duyệt từ {{ $noti->username }}
                                     </p>
+                                    <span class="d-flex justify-content-end"
+                                        style="font-size: 11px; padding-right: 10px; color: rgb(115, 115, 121);"
+                                    >
+                                        {{ date("d/m/Y H:i a", strtotime($noti->create_at)) }}
+                                    </span>
                                 </a>
                             </li>
                         @endforeach

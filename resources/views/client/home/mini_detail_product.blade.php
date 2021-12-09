@@ -31,7 +31,7 @@
             <ins>
                 <span class="price-amount">
                     <span class="currencySymbol price_prod">
-                        {{ number_format($price_discount->price_now, 0, ',', '.') }}đ
+                        {{ number_format($price_discount->price_now, 0, ',', '.') }}₫
                     </span>
                 </span>
             </ins>
@@ -39,14 +39,14 @@
             <ins>
                 <span class="price-amount">
                     <span class="currencySymbol price_prod">
-                        {{ number_format($price_discount->price_now, 0, ',', '.') }}đ
+                        {{ number_format($price_discount->price_now, 0, ',', '.') }}₫
                     </span>
                 </span>
             </ins>
             <del>
                 <span class="price-amount">
                     <span class="currencySymbol">
-                        {{ number_format($price_discount->price_old, 0, ',', '.') }}đ
+                        {{ number_format($price_discount->price_old, 0, ',', '.') }}₫
                     </span>
                 </span>
             </del>
@@ -62,7 +62,10 @@
     <div class="sort_desc_product" style="font-size: 15px;">{!! $product->product_sort_desc !!}</div>
     <div class="from-cart">
         <div class="qty-input">
-            <input class="qty_prod qty_mini_detail_{{ $product->product_id }} cus_main_border" type="number" name="qty_mini_detail" value="1" data-max_value="100" data-min_value="1" data-step="1">
+            <input class="qty_prod qty_mini_detail qty_mini_detail_{{ $product->product_id }} cus_main_border"
+                type="number" name="qty_mini_detail" value="1" data-max_value="100" data-min_value="1"
+                data-step="1" data-id = "{{ $product->product_id }}"
+            >
             <a href="#" class="qty-btn btn-up"><i class="fa fa-caret-up up" aria-hidden="true"></i></a>
             <a href="#" class="qty-btn btn-down"><i class="fa fa-caret-down down" aria-hidden="true"></i></a>
             <input type="hidden" name="_token" value="{{ csrf_token() }}" />
@@ -200,6 +203,23 @@
                             }
                         }
                     }
+                });
+            }
+
+        });
+
+        $('.qty_mini_detail').bind('keyup mouseup blur', function (){
+            product_id = $(this).attr('data-id');
+            qty = $('.qty_mini_detail_'+product_id).val();
+            if(!(Math.floor(qty) == qty && $.isNumeric(qty)))
+            {
+                $('.qty_mini_detail_'+product_id).val(1);
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'error',
+                    title: 'Số lượng không hợp lệ !',
+                    showConfirmButton: false,
+                    timer: 1000
                 });
             }
 

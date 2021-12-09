@@ -33,18 +33,18 @@
                                                         @if ($price_discount->percent_discount == 0)
                                                             <ins><span class="price-amount">
                                                                 <span class="currencySymbol">
-                                                                    {{ number_format($price_discount->price_now, 0, ',', '.') }}đ
+                                                                    {{ number_format($price_discount->price_now, 0, ',', '.') }}₫
                                                                 </span></span>
                                                             </ins>
                                                         @else
                                                             <ins><span class="price-amount">
                                                                 <span class="currencySymbol">
-                                                                    {{ number_format($price_discount->price_now, 0, ',', '.') }}đ
+                                                                    {{ number_format($price_discount->price_now, 0, ',', '.') }}₫
                                                                 </span></span>
                                                             </ins>
                                                             <del><span class="price-amount">
                                                                 <span class="currencySymbol">
-                                                                    {{ number_format($price_discount->price_old, 0, ',', '.') }}đ
+                                                                    {{ number_format($price_discount->price_old, 0, ',', '.') }}₫
                                                                 </span></span>
                                                             </del>
                                                         @endif

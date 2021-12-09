@@ -85,7 +85,7 @@
                                                                     <ins>
                                                                         <span class="price-amount">
                                                                             <span class="currencySymbol">
-                                                                                {{ number_format($price_discount->price_now, 0, ',', '.') }}đ
+                                                                                {{ number_format($price_discount->price_now, 0, ',', '.') }}₫
                                                                                 @php
                                                                                     $price_product = $price_discount->price_now;
                                                                                 @endphp
@@ -95,7 +95,7 @@
                                                                     <ins>
                                                                         <span class="price-amount">
                                                                             <span class="currencySymbol">
-                                                                                {{ number_format($price_discount->price_now, 0, ',', '.') }}đ
+                                                                                {{ number_format($price_discount->price_now, 0, ',', '.') }}₫
                                                                                 @php
                                                                                     $price_product = $price_discount->price_now;
                                                                                 @endphp
@@ -104,7 +104,7 @@
                                                                     <del>
                                                                         <span class="price-amount">
                                                                             <span class="currencySymbol">
-                                                                                {{ number_format($price_discount->price_old, 0, ',', '.') }}đ
+                                                                                {{ number_format($price_discount->price_old, 0, ',', '.') }}₫
                                                                             </span>
                                                                         </span>
                                                                     </del>
@@ -147,7 +147,7 @@
                                                         <td class="product-subtotal" data-title="Total">
                                                             <div class="price price-contain">
                                                                 <ins><span class="price-amount"><span
-                                                                            class="currencySymbol totol_price_cart_item_update_{{ $cart->cart_id }} ">{{ number_format($price_product * $cart->quantity, 0, ',', '.') }}đ</span></span></ins>
+                                                                            class="currencySymbol totol_price_cart_item_update_{{ $cart->cart_id }} ">{{ number_format($price_product * $cart->quantity, 0, ',', '.') }}₫</span></span></ins>
                                                                 <input type="hidden"
                                                                     class="get_total_price_cart_item_check_{{ $cart->cart_id }} change_get_total_price_cart_item_check"
                                                                     value="{{ $price_product * $cart->quantity }}">
@@ -170,7 +170,7 @@
                                     <div class="subtotal-line">
                                         <b class="stt-name">Tổng tiền</b>
                                         <span
-                                            class="stt-price show_total_price_check_item_cart">{{ number_format($total_price_all_cart, 0, ',', '.') }}đ</span>
+                                            class="stt-price show_total_price_check_item_cart">{{ number_format($total_price_all_cart, 0, ',', '.') }}₫</span>
                                         <input type="hidden" value="{{ $total_price_all_cart }}"
                                             class="show_total_price_check_item_cart_hidden">
                                     </div>
@@ -239,7 +239,7 @@
                                                                                         {{ number_format($price->price, 0, ',', '.') }}
                                                                                     @endif
                                                                                 @endforeach
-                                                                            </span>vnđ</span>
+                                                                            </span>₫</span>
                                                                     </ins>
                                                                     {{-- <del><span class="price-amount"><span class="currencySymbol">£</span>95.00</span></del> --}}
                                                                 </div>

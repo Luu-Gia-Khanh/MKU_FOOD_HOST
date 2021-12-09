@@ -27,3 +27,32 @@
         </div>
     </div>
 </div>
+
+<!-- The Modal Cancel order -->
+<div class="modal fade" id="modal_cancel_delivered">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Thông Báo</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <form action="{{ URL::to('shipper/confirm_delivery_order_cancel') }}" method="post">
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="modal_body_delivary">Xác nhận giao hàng không thành công ?</div>
+
+                        @csrf
+                        <input type="hidden" value="" name="order_code" class="val_order_code_cancel">
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success btn_confirm_cancel_order_modal">Xác Nhận</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

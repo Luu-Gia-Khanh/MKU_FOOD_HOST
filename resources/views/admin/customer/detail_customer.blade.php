@@ -74,6 +74,10 @@
                                     Chưa cập nhật
                                 @endif
                             </li>
+                            <li>
+                                <span>Ngày tạo tài khoản</span>
+                                {{ date("d/m/Y H:i a", strtotime($customer->created_at)) }}
+                            </li>
                         </ul>
                     </div>
                 </div>

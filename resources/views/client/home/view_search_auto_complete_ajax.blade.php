@@ -18,9 +18,9 @@
                     <div class="name">{{ $product->product_name }}</div>
                     <div class="content_price">
                         @if ($price_discount->percent_discount == 0)
-                            <div class="price" style="font-size: 15px">{{ number_format($price_discount->price_now, 0, ',', '.') }}đ</div>
+                            <div class="price" style="font-size: 15px">{{ number_format($price_discount->price_now, 0, ',', '.') }}₫</div>
                         @else
-                            <div class="price" style="font-size: 15px">{{ number_format($price_discount->price_now, 0, ',', '.') }}đ</div>
+                            <div class="price" style="font-size: 15px">{{ number_format($price_discount->price_now, 0, ',', '.') }}₫</div>
                             <del class="price_old">{{ number_format($price_discount->price_old, 0, ',', '.') }}₫</del>
                         @endif
                     </div>

@@ -7388,7 +7388,7 @@ li.slick-current .slider-opt04__layout01 .buttons .btn{
     font-size: 0;
     line-height: 0;
     clear: both;
-    background-image: url(../images/home-01/bn-special-03-sample.jpg);
+    background-image: url(../../../upload/image_center_bg.png);
     background-position: center center;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -8358,7 +8358,7 @@ li.slick-current .slider-opt04__layout01 .buttons .btn{
     font-size: 40px;
     color: #ffffff;
     line-height: 1;
-    background-image: url(../images/home-01/bg_bold-title.png);
+    background-image: url(../../../upload/bg_bold-title.png);
     background-repeat: no-repeat;
     background-size: cover;
     min-width: 314px;
